@@ -1,9 +1,10 @@
 import React from "react"
 import Layout from "../components/Layout"
 
-export default function Home() {
+export default function NotFound() {
   return (
     <Layout>
-      <div>Start</div>
+      <div>Page doesn't exist</div>
     </Layout>
-  )}
+  )
+}

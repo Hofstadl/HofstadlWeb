@@ -1,9 +1,10 @@
 import React from "react"
 import Layout from "../components/Layout"
 
-export default function Home() {
+export default function Aktivitäten() {
   return (
     <Layout>
-      <div>Start</div>
+      <div>Aktivitäten</div>
     </Layout>
-  )}
+  )
+}
