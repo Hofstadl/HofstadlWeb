@@ -1,13 +1,16 @@
 import React from "react"
 import Layout from "../components/Layout"
-import {graphql} from "gatsby"
+import {graphql} from "gatsby";
+import {useTranslation} from "gatsby-plugin-react-i18next";
 
-export default function Home() {
+export default function RoomsApartments() {
+    const {t} = useTranslation();
+
     return (
-        <Layout>
-            <div>Start</div>
-        </Layout>
-    )
+    <Layout>
+      <div>{t("rooms&apartments")}</div>
+    </Layout>
+  )
 }
 
 export const query = graphql`

@@ -14,12 +14,22 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "gatsby": "^4.0.0-zz-next.1",
-    "gatsby-plugin-postcss": "^4.14.0",
-    "postcss": "^8.3.10",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "tailwindcss": "^2.2.17"
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.1.1",
+    "@mui/styles": "latest",
+    "gatsby": "latest",
+    "gatsby-plugin-postcss": "latest",
+    "gatsby-plugin-react-i18next": "latest",
+    "gatsby-source-filesystem": "latest",
+    "gatsby-theme-material-ui": "latest",
+    "gatsby-transformer-json": "latest",
+    "i18next": "latest",
+    "postcss": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-i18next": "latest",
+    "tailwindcss": "latest"
   },
   "devDependencies": {
     "prettier": "2.3.2"
