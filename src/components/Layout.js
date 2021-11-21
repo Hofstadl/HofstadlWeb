@@ -7,7 +7,7 @@ export default function Layout({children}) {
     return (
         <MuiWrapper>
             <Navbar/>
-            {children}
+                {children}
             <footer>Copyright</footer>
         </MuiWrapper>
     )

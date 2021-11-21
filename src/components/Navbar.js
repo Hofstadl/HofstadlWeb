@@ -8,17 +8,20 @@ import {I18nextContext, Link, useTranslation} from 'gatsby-plugin-react-i18next'
 import LanguageSwitcher from "./LanguageSwitcher";
 import {makeStyles} from "@mui/styles";
 
-function ElevationScroll({children}) {
-    const trigger = useScrollTrigger({
+function ElevationScroll({children, path}) {
+    let trigger = useScrollTrigger({
         disableHysteresis: true,
-        threshold: 200
+        threshold: 300
     })
+
+    if (path !== '/') {
+        trigger = true
+    }
 
     return cloneElement(children, {
-        className: trigger ? "bg-primary" : "transparent"
+        color: trigger ? "primary" : "transparent"
     })
 }
-
 
 const tabs = [
     {
@@ -52,13 +55,12 @@ export default function Navbar() {
 
     return (
         <>
-            <ElevationScroll>
+            <ElevationScroll path={context.originalPath}>
                 <AppBar
                     color={"transparent"}
                     elevation={0}
                 >
                     <Toolbar className={"w-screen flex justify-around"}>
-
                         {/* Desktop view */}
                         <Hidden mdDown>
                             {tabs.map(tab => (
@@ -71,7 +73,6 @@ export default function Navbar() {
                         </Hidden>
                         <LanguageSwitcher/>
                     </Toolbar>
-
                 </AppBar>
             </ElevationScroll>
             <div className={context.originalPath === '/' ? null : classes.toolbarSpacing}/>

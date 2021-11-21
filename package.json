@@ -14,10 +14,11 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@emotion/react": "^11.6.0",
-    "@emotion/styled": "^11.6.0",
-    "@mui/material": "^5.1.1",
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/material": "latest",
     "@mui/styles": "latest",
+    "@react-spring/web": "latest",
     "gatsby": "latest",
     "gatsby-plugin-postcss": "latest",
     "gatsby-plugin-react-i18next": "latest",
@@ -29,6 +30,7 @@
     "react": "latest",
     "react-dom": "latest",
     "react-i18next": "latest",
+    "react-parallax": "latest",
     "tailwindcss": "latest"
   },
   "devDependencies": {
