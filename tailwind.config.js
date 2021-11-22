@@ -10,7 +10,13 @@ module.exports = {
       textColor: {
         primary: "blue", //custom color -> text-primary
         secondary: "red"
-      }
+      },
+      backgroundColor: theme => ({
+
+        ...theme('colors'),
+
+        'beige': '#f9f4f1',
+      })
     },
   },
   variants: {
