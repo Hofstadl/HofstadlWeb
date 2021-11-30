@@ -3,6 +3,8 @@ import Layout from "../components/Layout"
 import Typography from '@mui/material/Typography';
 
 export default function NotFound() {
+    const {t} = useTranslation();
+
     return (
         <Layout>
 
@@ -14,12 +16,26 @@ export default function NotFound() {
                     404
                 </Typography>
                 <Typography variant="h4" gutterBottom component="div">
-                    UPS! NICHTS WURDE GEFUNDEN!
+                    {t("nothingFound")}
                 </Typography>
                 <Typography variant="body2" gutterBottom component="div">
-                    Die Seite nach der Sie suchen existiert nicht oder ist vorübergehend nicht erreichbar!
+                    {t("nothingFoundText")}
                 </Typography>
             </div>
         </Layout>
     )
 }
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
