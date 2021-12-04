@@ -122,6 +122,7 @@ export default function Footer() {
                             lg={3}
                         >
                             3800 Göpfritz
+
                         </Grid>
                     </Grid>
                 </Grid>
