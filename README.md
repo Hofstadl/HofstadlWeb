@@ -1,5 +1,10 @@
 # HofstadlWeb
 
+<p align="center">
+  <a href="https://hofstadl.tk/">
+    <img src="/src/data/images/ParallaxFront.png"></a>
+</p>
+
 The official website of Hofstadl - an accommodation facility in Lower Austria, Waldviertel
 
 ## Socials
