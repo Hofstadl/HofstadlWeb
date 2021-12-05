@@ -30,5 +30,5 @@ Visit our website and find out about the possibilities to enjoy our country air 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ce7b6847-036d-406d-b97d-4e4b876907d8/deploy-status)](https://app.netlify.com/sites/hofstadl/deploys)
 [![Hofstadl](https://img.shields.io/website-up-down-green-red/http/hofstadl.tk.svg)](https://www.hofstadl.tk)
-[![License](https://img.shields.io/github/license/Hofstadl/HofstadlWeb.svg)]
-[![Size](https://badge-size.herokuapp.com/Hofstadl/HofstadlWeb/main)]
+[![License](https://img.shields.io/github/license/Hofstadl/HofstadlWeb.svg)](https://github.com/Hofstadl/HofstadlWeb/blob/main/LICENSE)
+[![Size](https://badge-size.herokuapp.com/Hofstadl/HofstadlWeb/main)](https://github.com/Hofstadl/HofstadlWeb/)
