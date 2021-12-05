@@ -5,8 +5,12 @@
     <img src="/src/data/images/start/parallaxFront.png"></a>
 </p>
 
-[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/BiobauernhofLiebhart/)
-[![Facebook](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/hofstadl_liebhart/)
+<p align="center">
+  <a href="https://www.facebook.com/BiobauernhofLiebhart/">
+    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white"></a>
+  <a href="https://www.instagram.com/hofstadl_liebhart/">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"></a>
+</p>
 
 The official website of Hofstadl - an accommodation facility in Lower Austria, Waldviertel. 
 
@@ -31,4 +35,4 @@ Visit our website and find out about the possibilities to enjoy our country air 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ce7b6847-036d-406d-b97d-4e4b876907d8/deploy-status)](https://app.netlify.com/sites/hofstadl/deploys)
 [![Hofstadl](https://img.shields.io/website-up-down-green-red/http/hofstadl.tk.svg)](https://www.hofstadl.tk)
 [![License](https://img.shields.io/github/license/Hofstadl/HofstadlWeb.svg)](https://github.com/Hofstadl/HofstadlWeb/blob/main/LICENSE)
-[![Size](https://badge-size.herokuapp.com/Hofstadl/HofstadlWeb/main)](https://github.com/Hofstadl/HofstadlWeb/)
+[![Size](https://img.shields.io/github/repo-size/Hofstadl/HofstadlWeb?logo=GitHub&style=for-the-badge&logo=repo-size&logoColor=white)](https://github.com/Hofstadl/HofstadlWeb/)
