@@ -98,6 +98,7 @@ export default function Footer() {
                             md={3}
                             lg={3}>Biohof.Liebhart@aon.at</Grid>
                         <Grid
+
                             item
                             xs={3}
                             sm={3}
