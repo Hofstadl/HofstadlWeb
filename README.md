@@ -30,6 +30,24 @@ Visit our website and find out about the possibilities to enjoy our country air 
 [![MaterialUI](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white)](https://mui.com)
 [![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://www.netlify.com)
 
+## Run our website on your local machine
+
+Prerequirements: nodejs, yarn
+
+[![Node.js](https://img.shields.io/badge/node%2Ejs-@latest-brightgreen.svg?style=for-the-badge)](https://nodejs.org/en/download/)
+[![Yarn](https://img.shields.io/badge/yarn-@latest-brightgreen.svg?style=for-the-badge)](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
+
+
+[![Netlify Status](https://img.shields.io/yarn?label=Yarn&logo=yarn&logoColor=white&style=for-the-badge)](https://app.netlify.com/sites/hofstadl/deploys)
+
+#### Quick start
+
+1. Install dependencies with `yarn`
+2. Run the development server using `yarn run develop` and watch the site live on `http://localhost:8000`
+3. Generate production-ready content by running `yarn run build` and check out the result in the `public/` folder
+
+Alternatively the Gatsby-CLI can also be used
+
 ## HofstadlWeb-Stats
 
 [![Hofstadl](https://img.shields.io/website-up-down-green-red/http/hofstadl.tk.svg?style=for-the-badge)](https://www.hofstadl.tk)
