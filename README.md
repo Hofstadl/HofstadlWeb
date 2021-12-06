@@ -32,7 +32,9 @@ Visit our website and find out about the possibilities to enjoy our country air 
 
 ## Run our website on your local machine
 
-Prerequirements: [![Node.js](https://img.shields.io/badge/node%2Ejs-@latest-brightgreen.svg?style=for-the-badge)](https://nodejs.org/en/download/) [![Yarn](https://img.shields.io/badge/yarn-@latest-brightgreen.svg?style=for-the-badge)](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
+Prerequirements: 
+
+[![Node.js](https://img.shields.io/badge/node%2Ejs-@latest-brightgreen.svg?style=for-the-badge)](https://nodejs.org/en/download/) [![Yarn](https://img.shields.io/badge/yarn-@latest-brightgreen.svg?style=for-the-badge)](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
 
 #### Quick start
 
