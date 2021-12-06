@@ -42,7 +42,7 @@ Prerequirements:
 2. Run the development server using `yarn run develop` and watch the site live on `http://localhost:8000`
 3. Generate production-ready content by running `yarn run build` and check out the result in the `public/` folder
 
-Alternatively the Gatsby-CLI can also be used
+Alternatively the [Gatsby-CLI](https://www.gatsbyjs.com/docs/glossary/yarn/) can also be used
 
 ## HofstadlWeb-Stats
 
