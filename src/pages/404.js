@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/Layout"
-import Typography from '@mui/material/Typography';
 
 import { graphql } from 'gatsby'
 import {useTranslation} from "gatsby-plugin-react-i18next";
@@ -10,25 +9,18 @@ export default function NotFound() {
 
     return (
         <Layout>
-            <div>
-                <Typography style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'}} fontWeight={350} color={'orange'} variant="h1" component="div" gutterBottom>
+            <div class="flex h-screen flex-col">
+                <div class="m-auto">
+                    <div class="align-bottom text-center text-9xl text-yellow-500">
                     404
-                </Typography>
-                <Typography style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'}} variant="h4" gutterBottom component="div">
+                    </div>
+                <div class="align-middle text-center text-4xl">
                     {t("nothingFound")}
-                </Typography>
-                <Typography style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'}} variant="body2" gutterBottom component="div">
+                </div>
+                <div class="align-middle text-center text-1xl">
                     {t("nothingFoundText")}
-                </Typography>
+                </div>
+                </div>
             </div>
         </Layout>
     )
