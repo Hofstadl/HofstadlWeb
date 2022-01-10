@@ -15,10 +15,10 @@ export default function NotFound() {
                         500
                     </div>
                     <div class="align-middle text-center text-4xl">
-                        {t("ServerError")}
+                        {t("serverError")}
                     </div>
                     <div class="align-middle text-center text-1xl">
-                        {t("ServerErrorText")}
+                        {t("serverErrorText")}
                     </div>
                 </div>
             </div>
