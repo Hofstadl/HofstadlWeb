@@ -1,34 +1,26 @@
 import React from "react"
 import Layout from "../components/Layout"
-import Typography from '@mui/material/Typography';
 
 import { graphql } from 'gatsby'
 import {useTranslation} from "gatsby-plugin-react-i18next";
 
-export default function ServerError() {
+export default function NotFound() {
     const {t} = useTranslation();
 
     return (
         <Layout>
-            <div>
-                <Typography style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'}} fontWeight={350} color={'orange'} variant="h1" component="div" gutterBottom>
-                    500
-                </Typography>
-                <Typography style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'}} variant="h4" gutterBottom component="div">
-                    {t("nothingFound")}
-                </Typography>
-                <Typography style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'}} variant="body2" gutterBottom component="div">
-                    {t("nothingFoundText")}
-                </Typography>
+            <div class="flex h-screen flex-col">
+                <div class="m-auto">
+                    <div class="align-bottom text-center text-9xl text-yellow-500">
+                        500
+                    </div>
+                    <div class="align-middle text-center text-4xl">
+                        {t("ServerError")}
+                    </div>
+                    <div class="align-middle text-center text-1xl">
+                        {t("ServerErrorText")}
+                    </div>
+                </div>
             </div>
         </Layout>
     )
