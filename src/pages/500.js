@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
+import ErrorPage from "../components/ErrorPage"
 
 import { graphql } from 'gatsby'
 import {useTranslation} from "gatsby-plugin-react-i18next";
@@ -9,19 +10,7 @@ export default function NotFound() {
 
     return (
         <Layout>
-            <div class="flex h-screen flex-col">
-                <div class="m-auto">
-                    <div class="align-bottom text-center text-9xl text-yellow-500">
-                        500
-                    </div>
-                    <div class="align-middle text-center text-4xl">
-                        {t("serverError")}
-                    </div>
-                    <div class="align-middle text-center text-1xl">
-                        {t("serverErrorText")}
-                    </div>
-                </div>
-            </div>
+            <ErrorPage errorCode={500} error={t("serverError")} errorDetails={t("serverErrorText")}/>
         </Layout>
     )
 }
