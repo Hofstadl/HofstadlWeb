@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
-import Typography from '@mui/material/Typography';
+import ErrorPage from "../components/ErrorPage"
 
 import { graphql } from 'gatsby'
 import {useTranslation} from "gatsby-plugin-react-i18next";
@@ -10,26 +10,7 @@ export default function NotFound() {
 
     return (
         <Layout>
-            <div>
-                <Typography style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'}} fontWeight={350} color={'orange'} variant="h1" component="div" gutterBottom>
-                    404
-                </Typography>
-                <Typography style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'}} variant="h4" gutterBottom component="div">
-                    {t("nothingFound")}
-                </Typography>
-                <Typography style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'}} variant="body2" gutterBottom component="div">
-                    {t("nothingFoundText")}
-                </Typography>
-            </div>
+            <ErrorPage errorCode={404} error={t("nothingFound")} errorDetails={t("nothingFoundText")}/>
         </Layout>
     )
 }
