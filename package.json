@@ -1,13 +1,12 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "HofstadlWeb",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "The official website of Hofstadl - an accommodation facility in Lower Austria, Waldviertel 🇦🇹",
   "version": "0.1.0",
-  "license": "0BSD",
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "dev": "gatsby develop -H 0.0.0.0 -p 8000",
+    "develop": "gatsby develop -H 0.0.0.0 -p 8000",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",

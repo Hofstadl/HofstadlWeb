@@ -12,16 +12,16 @@
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"></a>
 </p>
 
-The official website of Hofstadl - an accommodation facility in Lower Austria, Waldviertel. 
+The official website of Hofstadl - an accommodation facility in Lower Austria, Waldviertel.
 
 Visit our website and find out about the possibilities to enjoy our country air or take a look at the technical background of our website in our repository.
 
 ## Book your visit here
 
-* [Hofstadl](https://www.hofstadl.tk)
-* [Booking.com](http://www.booking.com/Share-CzKh43)
-* [Urlaub am Bauernhof](https://www.urlaubambauernhof.at/de/hoefe/liebhart)
-* [A-Hotel](https://www.a-hotel.com/de/osterreich/238364-merkenbrechts/6847654-1-hofstadl-sonja-liebhart/)
+- [Hofstadl](https://www.hofstadl.tk)
+- [Booking.com](http://www.booking.com/Share-CzKh43)
+- [Urlaub am Bauernhof](https://www.urlaubambauernhof.at/de/hoefe/liebhart)
+- [A-Hotel](https://www.a-hotel.com/de/osterreich/238364-merkenbrechts/6847654-1-hofstadl-sonja-liebhart/)
 
 ## Tech we build on
 
@@ -31,7 +31,7 @@ Visit our website and find out about the possibilities to enjoy our country air 
 
 ## Run our website on your local machine
 
-Prerequirements: 
+Prerequirements:
 
 [![Node.js](https://img.shields.io/badge/node%2Ejs-@latest-brightgreen.svg?style=for-the-badge)](https://nodejs.org/en/download/) [![Yarn](https://img.shields.io/badge/yarn-@latest-brightgreen.svg?style=for-the-badge)](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
 

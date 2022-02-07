@@ -61,7 +61,7 @@ export default function Navbar() {
         <Dialog
           open={menuOpen}
           onClose={() => setMenuOpen(false)}
-          className="md:hidden fixed top-24 h-full w-full overflow-y-auto bg-red-500"
+          className="fixed top-24 h-full w-full overflow-y-auto bg-red-500 md:hidden"
         >
           <div className={""}>
             {navs.map((nav) => (
