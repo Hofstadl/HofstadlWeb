@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://hofstadl.tk/">
-    <img src="/src/data/images/start/parallaxFront.png"></a>
+    <img src="/src/data/images/readme/hofstadl.jpg"></a>
 </p>
 
 <p align="center">
