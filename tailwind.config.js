@@ -1,26 +1,19 @@
 module.exports = {
-  mode: 'jit',
-  purge: [
-    './public/**/*.html',
-    './src/**/*.{js,jsx,ts,tsx,vue}',
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  darkMode: "class", // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: {
-      textColor: {
-        primary: "blue", //custom color -> text-primary
-        secondary: "red"
+      colors: {
+        green: "#8DA364",
+        blue: "#BFD0E7",
+        purple: "#2B0727",
       },
-      backgroundColor: theme => ({
-
-        ...theme('colors'),
-
-        'beige': '#f9f4f1',
-      })
+      boxShadow: {
+        inner: "inset 0px 0px 6px rgba(0, 0, 0, 0.25)",
+      }
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }

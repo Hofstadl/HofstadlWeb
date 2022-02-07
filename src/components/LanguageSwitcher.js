@@ -1,79 +1,71 @@
-import React, {useContext, useState} from "react"
-import Button from "@mui/material/Button"
-import Dialog from "@mui/material/Dialog"
-import DialogContent from "@mui/material/DialogContent"
-import DialogTitle from "@mui/material/DialogTitle"
-import {I18nextContext, Link, useI18next, useTranslation} from "gatsby-plugin-react-i18next"
-import {graphql} from "gatsby";
-import Grid from "@mui/material/Grid";
-
+import React, { useContext, useState } from "react";
+import { Dialog } from "@headlessui/react";
+import {
+  I18nextContext,
+  Link,
+  useI18next,
+  useTranslation,
+} from "gatsby-plugin-react-i18next";
+import { graphql } from "gatsby";
 
 export default function LanguageSwitcher() {
-    const context = useContext(I18nextContext)
-    const {languages, originalPath} = useI18next()
-    const {t} = useTranslation()
-    const [open, setOpen] = useState(false)
+  const context = useContext(I18nextContext);
+  const { languages, originalPath } = useI18next();
+  const { t } = useTranslation();
+  let [menuOpen, setMenuOpen] = useState(false);
 
-    const handleDialogOpen = () => {
-        setOpen(true)
-    }
+  return (
+    <div>
+      <button
+        className={"rounded-xl py-3 px-8 text-green shadow-inner"}
+        onClick={() => setMenuOpen(true)}
+      >
+        {context.language.toUpperCase()}
+      </button>
+      <Dialog
+        as="div"
+        open={menuOpen}
+        className="fixed inset-0 z-10 mx-8 overflow-y-auto"
+        onClose={() => setMenuOpen(false)}
+      >
+        <div className="flex min-h-screen items-center justify-center">
+          <Dialog.Overlay className="fixed inset-0 bg-black opacity-20" />
 
-    const handleDialogClose = () => {
-        setOpen(false)
-    }
-
-    return (
-        <div>
-            <Button variant="outlined" onClick={handleDialogOpen}>
-                {context.language}
-            </Button>
-
-            <Dialog
-                open={open}
-                onClose={handleDialogClose}
-                aria-labelledby="responsive-dialog-title"
+          <div
+            className={
+              "my-8 inline-block w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
+            }
+          >
+            <Dialog.Title
+              as={"h3"}
+              className="text-lg font-medium leading-6 text-gray-900"
             >
-                <DialogTitle id="responsive-dialog-title">
-                    {t("languageSwitcherTitle")}
-                </DialogTitle>
-                <DialogContent>
-                    <Grid
-                        container
-                        spacing={2}
-                        direction="row"
-                        justifyContent="space-evenly"
-                        alignItems="center"
-                        className={"justify-center"}
-                    >
-
-                        {languages.map((language) => (
-                            <Grid
-                                item
-                                xs={4}
-                                sm={4}
-                                md={3}
-                                lg={2}
-                                key={language}
-                            >
-                                <Link
-                                    to={originalPath}
-                                    language={language}
-                                    onClick={handleDialogClose}
-                                >
-                                    {language}
-                                </Link>
-                            </Grid>
-                        ))}
-                    </Grid>
-                </DialogContent>
-            </Dialog>
+              {t("languageSwitcherTitle")}
+            </Dialog.Title>
+            <div className="mt-6">
+              <p className="flex justify-start space-x-6 text-sm text-gray-500">
+                {languages.map((language) => (
+                  <Link
+                    key={language}
+                    to={originalPath}
+                    language={language}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {language.toUpperCase()}
+                  </Link>
+                ))}
+              </p>
+            </div>
+          </div>
         </div>
-    )
+      </Dialog>
+    </div>
+  );
 }
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns

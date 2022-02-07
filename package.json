@@ -7,6 +7,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "dev": "gatsby develop -H 0.0.0.0 -p 8000",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",
@@ -14,27 +15,26 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@emotion/react": "latest",
-    "@emotion/styled": "latest",
-    "@mui/material": "latest",
-    "@mui/styles": "latest",
+    "@headlessui/react": "^1.4.3",
     "@react-spring/web": "latest",
     "gatsby": "latest",
-    "gatsby-plugin-postcss": "latest",
     "gatsby-plugin-react-i18next": "latest",
     "gatsby-source-filesystem": "latest",
-    "gatsby-theme-material-ui": "latest",
     "gatsby-transformer-json": "latest",
     "i18next": "latest",
-    "postcss": "latest",
+    "postcss": "^8.4.6",
     "react": "latest",
+    "react-div-100vh": "^0.7.0",
     "react-dom": "latest",
     "react-i18next": "latest",
-    "react-parallax": "latest",
-    "tailwindcss": "latest"
+    "react-parallax": "latest"
   },
   "devDependencies": {
-    "prettier": "2.3.2"
+    "autoprefixer": "^10.4.2",
+    "gatsby-plugin-postcss": "^5.6.0",
+    "prettier": "^2.5.1",
+    "prettier-plugin-tailwindcss": "^0.1.5",
+    "tailwindcss": "^3.0.18"
   },
   "repository": {
     "type": "git",

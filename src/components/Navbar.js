@@ -1,88 +1,89 @@
-import React, {cloneElement, useContext} from "react"
-import {graphql} from "gatsby"
-import AppBar from "@mui/material/AppBar"
-import Toolbar from "@mui/material/Toolbar"
-import Hidden from "@mui/material/Hidden"
-import {useScrollTrigger} from "@mui/material"
-import {I18nextContext, Link, useTranslation} from 'gatsby-plugin-react-i18next';
+import React, { useState } from "react";
+import { graphql } from "gatsby";
+import { Link, useTranslation } from "gatsby-plugin-react-i18next";
+import ContactIcon from "../data/icons/ContactIcon";
+import TwitterIcon from "../data/icons/TwitterIcon";
+import ActivitiesIcon from "../data/icons/ActivitiesIcon";
+import HomeIcon from "../data/icons/HomeIcon";
+import MenuIcon from "../data/icons/MenuIcon";
+import RoomsApartmentsIcon from "../data/icons/RoomsApartmentsIcon";
+import logo from "../data/images/logo.png";
 import LanguageSwitcher from "./LanguageSwitcher";
-import {makeStyles} from "@mui/styles";
+import { Dialog } from "@headlessui/react";
 
-function ElevationScroll({children, path}) {
-    let trigger = useScrollTrigger({
-        disableHysteresis: true,
-        threshold: 300
-    })
-
-    if (path !== '/') {
-        trigger = true
-    }
-
-    return cloneElement(children, {
-        color: trigger ? "primary" : "transparent"
-    })
-}
-
-const tabs = [
-    {
-        name: "start",
-        route: "/"
-    },
-    {
-        name: "rooms&apartments",
-        route: "/rooms&apartments/",
-    },
-    {
-        name: "contact",
-        route: "/contact/",
-    },
-    {
-        name: "activities",
-        route: "/activities/",
-    }
-]
-
-const useStyles = makeStyles((theme) => {
-    return {
-        toolbarSpacing: theme.mixins.toolbar
-    }
-})
+const navs = [
+  {
+    name: "start",
+    route: "/",
+    icon: <HomeIcon className={"h-8 w-8"} fill={"none"} stroke={"#111"} />,
+  },
+  {
+    name: "rooms&apartments",
+    route: "/rooms&apartments/",
+    icon: <TwitterIcon className={"h-8 w-8"} fill={"#111"} stroke={"#111"} />,
+  },
+  {
+    name: "activities",
+    route: "/activities/",
+    icon: (
+      <ActivitiesIcon className={"h-8 w-8"} fill={"none"} stroke={"#111"} />
+    ),
+  },
+  {
+    name: "contact",
+    route: "/contact/",
+    icon: <ContactIcon className={"h-8 w-8"} fill={"none"} stroke={"#111"} />,
+  },
+];
 
 export default function Navbar() {
-    const classes = useStyles()
-    const {t} = useTranslation()
-    const context = useContext(I18nextContext)
+  let [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
-    return (
-        <>
-            <ElevationScroll path={context.originalPath}>
-                <AppBar
-                    color={"transparent"}
-                    elevation={0}
-                >
-                    <Toolbar className={"w-screen flex justify-around"}>
-                        {/* Desktop view */}
-                        <Hidden mdDown>
-                            {tabs.map(tab => (
-                                <Link to={tab.route} key={tab.route}>{t(tab.name)}</Link>
-                            ))}
-                        </Hidden>
-                        {/* Mobile view */}
-                        <Hidden mdUp>
-                            Hi
-                        </Hidden>
-                        <LanguageSwitcher/>
-                    </Toolbar>
-                </AppBar>
-            </ElevationScroll>
-            <div className={context.originalPath === '/' ? null : classes.toolbarSpacing}/>
-        </>
-    )
+  return (
+    <nav>
+      <div className={"mx-auto border border-red-500 px-8 md:max-w-7xl"}>
+        <div className={"hidden items-center justify-center space-x-6 md:flex"}>
+          <img src={logo} className={"mr-10 h-16 w-auto"} alt={"logo"} />
+          {navs.map((nav) => (
+            <Link to={nav.route} key={nav.route}>
+              {t(nav.name)}
+            </Link>
+          ))}
+          <LanguageSwitcher />
+        </div>
+        <div className={"flex items-center justify-between md:hidden"}>
+          <img src={logo} className={"mr-10 h-16 w-auto"} alt={"logo"} />
+          <button onClick={() => setMenuOpen(true)}>
+            <MenuIcon className={"h-8 w-8"} fill={"#111"} stroke={"#111"} />
+          </button>
+        </div>
+        <Dialog
+          open={menuOpen}
+          onClose={() => setMenuOpen(false)}
+          className="md:hidden fixed top-24 h-full w-full overflow-y-auto bg-red-500"
+        >
+          <div className={""}>
+            {navs.map((nav) => (
+              <Link
+                className={"block"}
+                to={nav.route}
+                key={nav.route}
+                onClick={() => setMenuOpen(false)}
+              >
+                {t(nav.name)}
+              </Link>
+            ))}
+          </div>
+        </Dialog>
+      </div>
+    </nav>
+  );
 }
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns
@@ -93,3 +94,29 @@ export const query = graphql`
     }
   }
 `;
+
+/*
+<nav className={"fixed w-screen"}>
+      <div className={"flex items-center justify-center"}>
+        <div class="max-w-7xl min-w-sm bg-red-100">
+          <div
+            className={
+              "hidden h-24 items-center justify-center space-x-8 border px-8 md:flex"
+            }
+          >
+            <img src={logo} className={"h-16 w-auto"} alt={"logo"} />
+            {navs.map((nav) => (
+              <Link to={nav.route} key={nav.route}>
+                {t(nav.name)}
+              </Link>
+            ))}
+            <LanguageSwitcher />
+          </div>
+          <div className={"md:hidden h-24 flex items-center justify-between"}>
+            <img src={logo} className={"h-16 w-auto"} alt={"logo"} />
+            <MenuIcon className={"h-8 w-8"} fill={"#111"} stroke={"#111"} />
+          </div>
+        </div>
+      </div>
+    </nav>
+    */
