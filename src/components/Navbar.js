@@ -19,7 +19,7 @@ const navs = [
   },
   {
     name: "rooms&apartments",
-    route: "/rooms&apartments/",
+    route: "/rooms-apartments/",
     icon: <TwitterIcon className={"h-8 w-8"} fill={"#111"} stroke={"#111"} />,
   },
   {
