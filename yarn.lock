@@ -4826,6 +4826,13 @@ gatsby-page-utils@^2.2.0:
     lodash "^4.17.21"
     micromatch "^4.0.4"
 
+gatsby-plugin-layout@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-layout/-/gatsby-plugin-layout-3.7.0.tgz#0735b1af34d76baaf97fc843c1023059736bfbe7"
+  integrity sha512-5hGSO5br0kVGwTOqJ6OZSaPI8w7Evnj4mSU3hyGspE0+K8NHlTEBegnNYqRONgI3QXKi3oCoGqruz7nxgJYjEw==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+
 gatsby-plugin-page-creator@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-4.2.0.tgz#680b5cd446be8f569fa900c45bc602c58799abff"
