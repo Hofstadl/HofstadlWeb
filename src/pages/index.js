@@ -8,7 +8,9 @@ export default function Start() {
 
   return (
     <Layout>
-      <div>{t("start")}</div>
+      <div>{t("start")}
+      Hallo
+      </div>
     </Layout>
   );
 }
