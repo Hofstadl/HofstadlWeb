@@ -1,6 +1,8 @@
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import React, { useState } from "react";
+import React, { useState } from "react";
+import { Switch } from "@headlessui/react";
 import Layout from "../components/Layout";
 import DatePicker from "react-datepicker";
 import { registerLocale } from  "react-datepicker";
@@ -15,6 +17,7 @@ registerLocale('cz', cs)
 export default function Start({data}) {
 
   const { t } = useTranslation();
+  const [room, setRoom] = useState(false);
     const [startDate1, setStartDate1] = useState(new Date());
     const [startDate2, setStartDate2] = useState(new Date());
 

@@ -1,81 +1,150 @@
-import React, { useState } from "react";
-import { graphql } from "gatsby";
+import React, { useState, useRef, Fragment } from "react";
+import { graphql, navigate } from "gatsby";
 import { Link, useTranslation } from "gatsby-plugin-react-i18next";
 import ContactIcon from "../data/icons/ContactIcon";
 import TwitterIcon from "../data/icons/TwitterIcon";
 import ActivitiesIcon from "../data/icons/ActivitiesIcon";
 import HomeIcon from "../data/icons/HomeIcon";
 import MenuIcon from "../data/icons/MenuIcon";
+import CloseIcon from "../data/icons/CloseIcon";
 import RoomsApartmentsIcon from "../data/icons/RoomsApartmentsIcon";
 import logo from "../data/images/logo.png";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { Dialog } from "@headlessui/react";
+import { Dialog, Transition } from "@headlessui/react";
+import { useChain, animated } from "@react-spring/web";
 
 const navs = [
   {
     name: "start",
     route: "/",
-    icon: <HomeIcon className={"h-8 w-8"} fill={"none"} stroke={"#111"} />,
+    icon: <HomeIcon className={"h-8 w-8 fill-transparent stroke-black"} />,
   },
   {
     name: "rooms&apartments",
     route: "/rooms-apartments/",
-    icon: <TwitterIcon className={"h-8 w-8"} fill={"#111"} stroke={"#111"} />,
+    icon: <TwitterIcon className={"h-8 w-8 fill-black"} />,
   },
   {
     name: "activities",
     route: "/activities/",
-    icon: (
-      <ActivitiesIcon className={"h-8 w-8"} fill={"none"} stroke={"#111"} />
-    ),
+    icon: <ActivitiesIcon className={"h-8 w-8 fill-black"} />,
   },
   {
     name: "contact",
     route: "/contact/",
-    icon: <ContactIcon className={"h-8 w-8"} fill={"none"} stroke={"#111"} />,
+    icon: <ContactIcon className={"h-8 w-8 fill-transparent stroke-black"} />,
   },
 ];
 
 export default function Navbar() {
   let [menuOpen, setMenuOpen] = useState(false);
+  let initialRef = useRef(null);
   const { t } = useTranslation();
 
   return (
-    <nav>
-      <div className={"mx-auto border border-red-500 px-8 md:max-w-7xl"}>
+    <nav className="fixed w-full bg-white">
+      <div className={"mx-auto px-8 md:max-w-7xl"}>
+        {/* Desktop navigation starts here */}
         <div className={"hidden items-center justify-center space-x-6 md:flex"}>
-          <img src={logo} className={"mr-10 h-16 w-auto"} alt={"logo"} />
+          <img
+            src={logo}
+            onClick={() => navigate("/")}
+            className={"pr-8 h-16 w-auto pt-2"}
+            alt={"logo"}
+          />
           {navs.map((nav) => (
             <Link to={nav.route} key={nav.route}>
               {t(nav.name)}
             </Link>
           ))}
-          <LanguageSwitcher />
+          <div className="pl-8">
+            <LanguageSwitcher />
+          </div>
         </div>
-        <div className={"flex items-center justify-between md:hidden"}>
-          <img src={logo} className={"mr-10 h-16 w-auto"} alt={"logo"} />
+        {/* Mobile navigation starts here */}
+        <div className={"flex h-20 items-center justify-between md:hidden"}>
+          <img
+            src={logo}
+            onClick={() => navigate("/")}
+            className={"mr-10 mt-2 h-16 w-auto"}
+            alt={"logo"}
+          />
+
           <button onClick={() => setMenuOpen(true)}>
             <MenuIcon className={"h-8 w-8"} fill={"#111"} stroke={"#111"} />
           </button>
         </div>
-        <Dialog
-          open={menuOpen}
-          onClose={() => setMenuOpen(false)}
-          className="fixed top-24 h-full w-full overflow-y-auto bg-red-500 md:hidden"
+        {/* Mobile navigation menu starts here */}
+        <Transition
+          show={menuOpen}
+          as={Fragment}
+          enter={`ease-in-out duration-300`}
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in-out duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
         >
-          <div className={""}>
-            {navs.map((nav) => (
-              <Link
-                className={"block"}
-                to={nav.route}
-                key={nav.route}
-                onClick={() => setMenuOpen(false)}
+          <Dialog
+            as="div"
+            initialFocus={initialRef}
+            ref={initialRef}
+            onClose={() => setMenuOpen(false)}
+            className="fixed inset-0 h-full w-full overflow-auto bg-white md:hidden"
+          >
+            <div className={"mx-auto px-8 md:max-w-7xl"}>
+              <div
+                className={"flex h-20 items-center justify-between"}
               >
-                {t(nav.name)}
-              </Link>
-            ))}
-          </div>
-        </Dialog>
+                <img
+                  src={logo}
+                  onClick={() => navigate("/")}
+                  className={"mr-10 mt-2 h-16 w-auto"}
+                  alt={"logo"}
+                />
+
+                <LanguageSwitcher/>
+              </div>
+            </div>
+            <div className="-mb-4 block border-b-2 pt-4" />
+
+            <div className={"mx-auto space-y-40 py-8 px-8 sm:space-y-60"}>
+              <div>
+                {navs.map((nav, index) => (
+                  <Transition.Child
+                    as={Fragment}
+                    enter={`ease-in-out duration-300`}
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="ease-in-out duration-200"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                  >
+                    <Link
+                      className={"block space-x-2 py-4"}
+                      to={nav.route}
+                      key={nav.route}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      <div className="flex items-center justify-start">
+                        <div className="pr-2">{nav.icon}</div>
+                        {t(nav.name)}
+                      </div>
+                    </Link>
+                  </Transition.Child>
+                ))}
+              </div>
+              <div className="flex justify-center ">
+                <button
+                  onClick={() => setMenuOpen(false)}
+                  className="flex h-14 w-14 items-center justify-center rounded-full shadow-inner"
+                >
+                  <CloseIcon className={"h-8 w-8 stroke-green"} />
+                </button>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
       </div>
     </nav>
   );
