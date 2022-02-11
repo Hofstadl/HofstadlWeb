@@ -1,7 +1,6 @@
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import React, { useState } from "react";
-import React, { useState } from "react";
 import { Switch } from "@headlessui/react";
 import Layout from "../components/Layout";
 import DatePicker from "react-datepicker";
@@ -37,20 +36,19 @@ export default function Start({data}) {
 
   var merged = [].concat.apply([], dates);
 
-  console.log(data)
+  var locale = data.locales.edges[0].node.language
 
   return (
-    <Layout>
+      <div>
       <div>{t("start")}</div>
 
         <div className="items-center">
-            <DatePicker selected={startDate1} onChange={(date) => setStartDate1(date)} highlightDates={merged} locale={data.locales.edges[0].node.language} />
-            <DatePicker selected={startDate2} onChange={(date) => setStartDate2(date)} highlightDates={merged} locale={data.locales.edges[0].node.language} />
+            <DatePicker selected={startDate1} onChange={(date) => setStartDate1(date)} highlightDates={merged} locale={locale} />
+            <DatePicker selected={startDate2} onChange={(date) => setStartDate2(date)} highlightDates={merged} locale={locale} />
 
             <button>button</button>
         </div>
-
-    </Layout>
+      </div>
   );
 }
 
