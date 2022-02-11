@@ -37,5 +37,14 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-google-calendar`,
+      options: {
+        calendarIds: [
+          'auct8d446vh0clqocmd5q2hpgs@group.calendar.google.com',
+        ],
+        maxResults: 2500,
+      }
+    },
   ],
 };
