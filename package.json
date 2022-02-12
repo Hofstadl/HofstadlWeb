@@ -27,6 +27,7 @@
     "postcss": "^8.4.6",
     "react": "latest",
     "react-calendar": "^3.7.0",
+    "react-date-range": "^1.4.0",
     "react-datepicker": "^4.6.0",
     "react-div-100vh": "^0.7.0",
     "react-dom": "latest",

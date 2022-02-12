@@ -4,22 +4,31 @@ import React, { useState } from "react";
 import { Switch } from "@headlessui/react";
 import Layout from "../components/Layout";
 import activities from "../data/activities";
-import DatePicker from "react-datepicker";
 import { registerLocale } from  "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import es from 'date-fns/locale/es';
 import de from 'date-fns/locale/de';
 import cs from 'date-fns/locale/cs';
+import { addDays } from 'date-fns';
+import { DateRangePicker } from 'react-date-range';
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 registerLocale('en', es)
 registerLocale('de', de)
 registerLocale('cz', cs)
 
+
+
 export default function Start({data}) {
 
+    const [state, setState] = useState([
+        {
+            startDate: new Date(),
+            endDate: addDays(new Date(), 7),
+            key: 'selection'
+        }
+    ]);
+
   const { t } = useTranslation();
-  const [room, setRoom] = useState(false);
-    const [startDate1, setStartDate1] = useState(new Date());
-    const [startDate2, setStartDate2] = useState(new Date());
 
   var getDaysArray = function(start, end) {
       for(var arr=[],dt=new Date(start); dt<=end; dt.setDate(dt.getDate()+1)){
@@ -28,16 +37,28 @@ export default function Start({data}) {
       return arr;
   };
 
-  var array = data.allCalendarEvent.edges;
-  var dates = [];
+  var zimmer
+  var ferienwohnungen
 
-  for (let i = 0; i < array.length; i++) {
-      dates.push(getDaysArray(new Date(array[i].node.start.dateTime), new Date(array[i].node.end.dateTime)));
+
+
+  if(data.allCalendar.edges[0].node.summary === 'Zimmer') {
+      zimmer = data.allCalendar.edges[0].node.children
+      ferienwohnungen = data.allCalendar.edges[1].node.children
+  } else {
+      zimmer = data.allCalendar.edges[1].node.children
+      ferienwohnungen = data.allCalendar.edges[0].node.children
   }
 
-  var merged = [].concat.apply([], dates);
+    console.log(zimmer)
+    console.log(ferienwohnungen)
 
-  var locale = data.locales.edges[0].node.language
+  /*for (let i = 0; i < array.length; i++) {
+      dates.push(getDaysArray(new Date(array[i].node.start.dateTime), new Date(array[i].node.end.dateTime)));
+  }*/
+
+
+    const [enabled, setEnabled] = useState(false)
 
   return (
     <>
@@ -82,10 +103,36 @@ export default function Start({data}) {
       <div>{t("start")}</div>
 
         <div className="items-center">
-            <DatePicker selected={startDate1} onChange={(date) => setStartDate1(date)} highlightDates={merged} locale={locale} />
-            <DatePicker selected={startDate2} onChange={(date) => setStartDate2(date)} highlightDates={merged} locale={locale} />
 
-            <button>button</button>
+            <Switch.Group>
+                <div className="flex items-center">
+                    <Switch.Label className="mr-4">FerienWohnungen</Switch.Label>
+                    <Switch
+                        checked={enabled}
+                        onChange={setEnabled}
+                        className={`${
+                            enabled ? 'bg-blue-600' : 'bg-gray-200'
+                        } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+                    >
+          <span
+              className={`${
+                  enabled ? 'translate-x-6' : 'translate-x-1'
+              } inline-block w-4 h-4 transform bg-white rounded-full transition-transform`}
+          />
+                    </Switch>
+                </div>
+            </Switch.Group>
+
+
+            <DateRangePicker
+                locale={es}
+                onChange={item => setState([item.selection])}
+                showSelectionPreview={true}
+                moveRangeOnFirstSelection={false}
+                months={2}
+                ranges={state}
+                direction="horizontal"
+            />
         </div>
       </div>
       </>
@@ -94,21 +141,24 @@ export default function Start({data}) {
 
 export const query = graphql`
   query ($language: String!) {
-    allCalendarEvent {
-      edges {
-        node {
-          summary
-          start {
-            dateTime
-            timeZone
-          }
-          end {
-            dateTime
-            timeZone
+    allCalendar {
+    edges {
+      node {
+        summary
+        children {
+          ... on CalendarEvent {
+            summary
+            start {
+              dateTime
+            }
+            end {
+              dateTime
+            }
           }
         }
       }
     }
+  }
     locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {

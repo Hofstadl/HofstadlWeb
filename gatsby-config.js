@@ -48,6 +48,7 @@ module.exports = {
       options: {
         calendarIds: [
           'auct8d446vh0clqocmd5q2hpgs@group.calendar.google.com',
+          'h3493ko5vq73d3rdal2m7r1or4@group.calendar.google.com',
         ],
         maxResults: 2500,
       }
