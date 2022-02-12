@@ -1,4 +1,56 @@
-{
-  "activities": "Activities",
-  "reservoir": "Reservoir"
-}
+[
+  {
+    "id": "1",
+    "name": "Stausee Ottenstein",
+    "destination": "Peygarten-Ottenstein 69, 3532 Rastenfeld",
+    "description": "Der Stausee Ottenstein bietet nicht nur eine wunderschöne Kulisse zum Baden, sondern ist mit seinen bewaldeten Ufern der perfekte Platz zum Wandern oder Radfahren.",
+    "viewBox": "0 0 24 24",
+    "d":"M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+    "photo": "../../ottenstein.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Solefelsenbad Gmünd",
+    "destination": "Albrechtser Str. 10-12, 3950 Gmünd",
+    "description": "Die Süß- und Salzwasserbecken und die große Saunalandschaft begeistern die Gäste des Solefelsenbades ganz besonders. Aber auch für die kleinen Gäste gibt es ein Kinderbecken und eine Erlebnisrutsche zum austoben.",
+    "viewBox": "0 0 24 24",
+    "d":"M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+    "photo": "../../solefelsenbad-gmuend.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Biohof Lirnberger",
+    "destination": "Merkenbrechts 28, 3800 Merkenbrechts",
+    "description": "Ein tierisches und aufregendes Abenteuer bietet der Biohof Lirnbeger mit seinen Alpaka Wanderungen. Die Alpakas Lennard, José, Fernando und Alfredo freuen sich über euren Besuch!",
+    "viewBox": "0 0 24 24",
+    "d": "M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11",
+    "photo": "../../ottenstein.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Rosenburg",
+    "destination": "Rosenburg 1, 3573 Rosenburg",
+    "description": "Der Kletterwald auf der Rosenburg besteht aus mehreren Parkours. Die Besonderheit des Kletterparks sind die abenteuerlichen Höhen, mit einem atemberaubenden Weitblick über das liebliche Kamptal und Aussicht zum Renaissanceschloss Rosenburg.",
+    "viewBox": "0 0 24 24",
+    "d":  "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z",
+    "photo": "../../rosenburg-kletterpark.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Lohnbachfälle",
+    "destination": "Rappottenstein 24 3911 Rappottenstein",
+    "description": "Der Lohnbachfall ist eine ca. 200 m lange Schluchtstrecke des Lohnbaches. Wechselnde Breiten unterstreichen die wildromantische Schönheit der Schlucht und bieten das perfekte Wander Erlebnis",
+    "viewBox": "0 0 24 24",
+    "d": "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z",
+    "photo": "../../lohnbachfall.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Waldviertel-Radweg",
+    "destination": "Krems - Rosenburg - Horn - Göpfritz - Litschau - Gmünd - GroßGerungs - MariaTaferl - KleinPöchlarn",
+    "description": "Der Waldviertel-Radweg durchzieht in einem weiten Bogen das gesamte Waldviertel und führt zu den schönsten Sehenswürdigkeiten der Region.",
+    "viewBox": "0 0 24 24",
+    "d": "M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7",
+    "photo": "../../radweg.jpg"
+  }
+]

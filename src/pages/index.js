@@ -2,15 +2,64 @@ import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import React from "react";
 import Layout from "../components/Layout";
+import activities from "../data/activities";
 
 export default function Start() {
   const { t } = useTranslation();
 
   return (
     <Layout>
-      <div>{t("start")}
-      Hallo
+      <div className="mt-32 relative">
+        <h1 className="">Aktivitäten</h1>
+      <ul className="mt-10 px-[5vw] w-full overflow-x-auto flex gap-8 snap-x">
+
+      {activities.map(activity => (
+
+      <h2 key={activity.id}>
+        <li className="snap-center">
+        <div className="relative flex-shrink-0 max-w-[95vw] overflow-hidden rounded-3xl">
+            <img src={activity.photo} alt="bild" className="absolute inset-0 w-full h-full object-cover object-bottom"/>
+            <div className="absolute inset-0 h-full w-full bg-gradient-to-tr from-black/75">
+            </div>
+            <div className="relative h-96 w-[300px] p-4 flex flex-col justify-between items-start">
+              <div></div>
+              <div className="h-44 w-[267px] rounded-r-lg rounded-bl-lg bg-gradient-to-r from-white to-white tracking-tight space-y-1">          
+              <svg className="w-5 h-5 dark:text-white" fill="none" stroke="currentColor" viewBox={activity.viewBox} xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={activity.d}></path></svg>
+
+                <h2 className="px-4 rounded-lg text-slate-900 flex justify-center leading-4 italic text-lg font-bold">
+                  {activity.name}        
+                </h2>
+                <h2 className="px-4  rounded-lg text-slate-600 flex justify-center leading-4 text-center text-sm font-light">
+                  {activity.destination}
+                </h2>
+                <h2 className="px-4 rounded-lg text-slate-900 flex justify-center leading-4 text-center text-sm font-medium">
+                  {activity.description}
+                </h2>
+
+                </div>
+            </div>
+        </div>
+        </li>
+      </h2>
+      ))}
+      </ul>
       </div>
+
+      <div>dark</div>
+      <div>dark</div>
+      <div>dark</div>
+      <div>dark</div>
+      <div>dark</div>
+      <div>dark</div>
+      <div>dark</div>
+      <div>dark</div>
+      <div>dark</div>
+      <div>dark</div>
+      <div>dark</div>
+      <div>dark</div>
+      <div>dark</div>
+      <div>dark</div>
+      <div>dark</div>
     </Layout>
   );
 }
