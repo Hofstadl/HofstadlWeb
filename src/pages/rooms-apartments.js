@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import { Pannellum } from "pannellum-react";
 import b from "../data/images/rooms-apartments/b.jpg";
 import a from "../data/images/rooms-apartments/a.jpg";
 
