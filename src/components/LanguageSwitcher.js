@@ -17,7 +17,7 @@ export default function LanguageSwitcher() {
   return (
     <div>
       <button
-        className={"rounded-xl py-3 px-8 text-green shadow-inner"}
+        className={"rounded-xl py-3 px-8 text-green shadow-inner dark:shadow-black shadow-neutral-200"}
         onClick={() => setMenuOpen(true)}
       >
         {context.language.toUpperCase()}
@@ -33,12 +33,12 @@ export default function LanguageSwitcher() {
 
           <div
             className={
-              "my-8 inline-block w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
+              "my-8 inline-block w-full max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-neutral-800 p-6 text-left align-middle shadow-xl transition-all"
             }
           >
             <Dialog.Title
               as={"h3"}
-              className="text-lg font-medium leading-6 text-gray-900"
+              className="text-lg font-medium leading-6 text-gray-900 dark:text-white"
             >
               {t("languageSwitcherTitle")}
             </Dialog.Title>

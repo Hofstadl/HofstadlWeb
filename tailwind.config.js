@@ -1,11 +1,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
         green: "#8DA364",
         blue: "#BFD0E7",
+        darkblue: "#98a6b8",
         purple: "#2B0727",
       },
       boxShadow: {

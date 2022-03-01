@@ -17,22 +17,22 @@ const navs = [
   {
     name: "start",
     route: "/",
-    icon: <HomeIcon className={"h-8 w-8 fill-transparent stroke-black"} />,
+    icon: <HomeIcon className={"h-8 w-8 fill-transparent stroke-black dark:stroke-white"} />,
   },
   {
     name: "rooms&apartments",
     route: "/rooms-apartments/",
-    icon: <TwitterIcon className={"h-8 w-8 fill-black"} />,
+    icon: <TwitterIcon className={"h-8 w-8 fill-black dark:fill-white"} />,
   },
   {
     name: "activities",
     route: "/activities/",
-    icon: <ActivitiesIcon className={"h-8 w-8 fill-black"} />,
+    icon: <ActivitiesIcon className={"h-8 w-8 fill-black dark:fill-white"} />,
   },
   {
     name: "contact",
     route: "/contact/",
-    icon: <ContactIcon className={"h-8 w-8 fill-transparent stroke-black"} />,
+    icon: <ContactIcon className={"h-8 w-8 fill-transparent stroke-black dark:fill-white"} />,
   },
 ];
 
@@ -42,10 +42,10 @@ export default function Navbar() {
   const { t } = useTranslation();
 
   return (
-    <nav className="fixed w-full bg-white">
+    <nav className="fixed w-full bg-white dark:bg-neutral-900 dark:text-white">
       <div className={"mx-auto px-8 md:max-w-7xl"}>
         {/* Desktop navigation starts here */}
-        <div className={"hidden items-center justify-center space-x-6 md:flex"}>
+        <div className={"hidden items-center justify-center space-x-6 md:flex h-24"}>
           <img
             src={logo}
             onClick={() => navigate("/")}
@@ -53,7 +53,7 @@ export default function Navbar() {
             alt={"logo"}
           />
           {navs.map((nav) => (
-            <Link to={nav.route} key={nav.route}>
+            <Link to={nav.route} key={nav.route} className="hover:text-green">
               {t(nav.name)}
             </Link>
           ))}
@@ -62,7 +62,7 @@ export default function Navbar() {
           </div>
         </div>
         {/* Mobile navigation starts here */}
-        <div className={"flex h-20 items-center justify-between md:hidden"}>
+        <div className={"flex items-center justify-between md:hidden h-20"}>
           <img
             src={logo}
             onClick={() => navigate("/")}
@@ -71,7 +71,7 @@ export default function Navbar() {
           />
 
           <button onClick={() => setMenuOpen(true)}>
-            <MenuIcon className={"h-8 w-8"} fill={"#111"} stroke={"#111"} />
+            <MenuIcon className={"h-8 w-8 dark:fill-white"} />
           </button>
         </div>
         {/* Mobile navigation menu starts here */}
@@ -90,7 +90,7 @@ export default function Navbar() {
             initialFocus={initialRef}
             ref={initialRef}
             onClose={() => setMenuOpen(false)}
-            className="fixed inset-0 h-full w-full overflow-auto bg-white md:hidden"
+            className="fixed inset-0 h-full w-full overflow-auto dark:bg-neutral-900 bg-white md:hidden dark:text-white"
           >
             <div className={"mx-auto px-8 md:max-w-7xl"}>
               <div
@@ -112,6 +112,7 @@ export default function Navbar() {
               <div>
                 {navs.map((nav, index) => (
                   <Transition.Child
+                    key={index}
                     as={Fragment}
                     enter={`ease-in-out duration-300`}
                     enterFrom="opacity-0"

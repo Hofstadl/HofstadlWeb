@@ -23,11 +23,14 @@
     "gatsby-source-filesystem": "latest",
     "gatsby-transformer-json": "latest",
     "i18next": "latest",
+    "pannellum-react": "^1.2.4",
+    "photo-sphere-viewer": "^4.5.1",
     "postcss": "^8.4.6",
     "react": "latest",
     "react-div-100vh": "^0.7.0",
     "react-dom": "latest",
     "react-i18next": "latest",
+    "react-pannellum": "^0.2.7",
     "react-parallax": "latest"
   },
   "devDependencies": {
