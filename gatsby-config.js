@@ -47,8 +47,8 @@ module.exports = {
       resolve: `gatsby-source-google-calendar`,
       options: {
         calendarIds: [
-          'auct8d446vh0clqocmd5q2hpgs@group.calendar.google.com',
-          'h3493ko5vq73d3rdal2m7r1or4@group.calendar.google.com',
+          '9gdggpsks7niic72l1ppo76fcg@group.calendar.google.com',
+          'm5q8o1slr45l6s03kdoenha7h8@group.calendar.google.com',
         ],
         maxResults: 2500,
       }
