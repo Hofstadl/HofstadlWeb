@@ -28,7 +28,6 @@
     "gatsby-transformer-json": "^4.8.0",
     "i18next": "^21.6.12",
     "pannellum-react": "^1.2.4",
-    "photo-sphere-viewer": "^4.5.1",
     "postcss": "^8.4.6",
     "react": "^17.0.2",
     "react-calendar": "^3.7.0",
