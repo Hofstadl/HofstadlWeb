@@ -23,7 +23,7 @@ export default function PersonsSelecter() {
         <p className="text-xs text-gray-400">Personen</p>
         <div className="flex items-center justify-between">
           <button onClick={() => handleClick(true)}>
-            <LeftArrowIcon />
+            <LeftArrowIcon className={`${persons === 1 ? "fill-gray-400" : "fill-black"} h-6 w-6`} />
           </button>
           <p className="px-2 text-lg">{persons}</p>
           <button onClick={() => handleClick(false)}>
