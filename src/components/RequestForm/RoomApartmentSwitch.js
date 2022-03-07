@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import { useTranslation } from "gatsby-plugin-react-i18next";
+import { graphql } from "gatsby";
 
 export default function RoomApartmentSwitch() {
   const [room, setRoom] = useState(true);
