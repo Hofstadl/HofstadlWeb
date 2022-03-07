@@ -25,7 +25,7 @@ export default function LanguageSwitcher() {
       <Dialog
         as="div"
         open={menuOpen}
-        className="fixed w-full inset-0 z-10 px-8 overflow-y-auto"
+        className="fixed w-full inset-0 z-50 px-8 overflow-y-auto"
         onClose={() => setMenuOpen(false)}
       >
         <div className="flex min-h-screen items-center justify-center">

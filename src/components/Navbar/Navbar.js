@@ -1,14 +1,14 @@
 import React, { useState, useRef, Fragment } from "react";
 import { graphql, navigate } from "gatsby";
 import { Link, useTranslation } from "gatsby-plugin-react-i18next";
-import ContactIcon from "../data/icons/ContactIcon";
-import TwitterIcon from "../data/icons/TwitterIcon";
-import ActivitiesIcon from "../data/icons/ActivitiesIcon";
-import HomeIcon from "../data/icons/HomeIcon";
-import MenuIcon from "../data/icons/MenuIcon";
-import CloseIcon from "../data/icons/CloseIcon";
-import RoomsApartmentsIcon from "../data/icons/RoomsApartmentsIcon";
-import logo from "../data/images/logo.png";
+import ContactIcon from "../../data/icons/ContactIcon";
+import TwitterIcon from "../../data/icons/TwitterIcon";
+import ActivitiesIcon from "../../data/icons/ActivitiesIcon";
+import HomeIcon from "../../data/icons/HomeIcon";
+import MenuIcon from "../../data/icons/MenuIcon";
+import CloseIcon from "../../data/icons/CloseIcon";
+import RoomsApartmentsIcon from "../../data/icons/RoomsApartmentsIcon";
+import logo from "../../data/images/logo.png";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Dialog, Transition } from "@headlessui/react";
 import { useChain, animated } from "@react-spring/web";
@@ -20,7 +20,7 @@ const navs = [
     icon: <HomeIcon className={"h-8 w-8 fill-transparent stroke-black dark:stroke-white"} />,
   },
   {
-    name: "rooms&apartments",
+    name: "rooms-apartments",
     route: "/rooms-apartments/",
     icon: <TwitterIcon className={"h-8 w-8 fill-black dark:fill-white"} />,
   },
@@ -42,7 +42,7 @@ export default function Navbar() {
   const { t } = useTranslation();
 
   return (
-    <nav className="fixed w-full bg-white dark:bg-neutral-900 dark:text-white">
+    <nav className="fixed z-50 w-full bg-white dark:bg-neutral-900 dark:text-white">
       <div className={"mx-auto px-8 md:max-w-7xl"}>
         {/* Desktop navigation starts here */}
         <div className={"hidden items-center justify-center space-x-6 md:flex h-24"}>
@@ -90,7 +90,7 @@ export default function Navbar() {
             initialFocus={initialRef}
             ref={initialRef}
             onClose={() => setMenuOpen(false)}
-            className="fixed inset-0 h-full w-full overflow-auto dark:bg-neutral-900 bg-white md:hidden dark:text-white"
+            className="fixed inset-0 z-40 h-full w-full overflow-auto dark:bg-neutral-900 bg-white md:hidden dark:text-white"
           >
             <div className={"mx-auto px-8 md:max-w-7xl"}>
               <div

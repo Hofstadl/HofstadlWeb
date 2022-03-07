@@ -1,7 +1,8 @@
-const plugin = require('tailwindcss/plugin')
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -18,20 +19,19 @@ module.exports = {
   plugins: [
     plugin(function ({ addUtilities }) {
       addUtilities({
-        '.scrollbar-hide': {
+        ".scrollbar-hide": {
           /* IE and Edge */
-          '-ms-overflow-style': 'none',
+          "-ms-overflow-style": "none",
 
           /* Firefox */
-          'scrollbar-width': 'none',
+          "scrollbar-width": "none",
 
           /* Safari and Chrome */
-          '&::-webkit-scrollbar': {
-            display: 'none'
-          }
-        }
-      }
-      )
-    })
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+        },
+      });
+    }),
   ],
 };
