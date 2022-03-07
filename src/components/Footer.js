@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../data/images/start/logo_mit_Schrift.png";
+import logo from "../data/images/logo.png";
 import { graphql } from "gatsby";
 import { Link, useTranslation } from "gatsby-plugin-react-i18next";
 import TwitterIcon from "../data/icons/TwitterIcon";
@@ -91,19 +91,20 @@ export default function Footer() {
         {/* Container starts here */}
         <div className="md:flex md:text-left">
           {/* Image starts here */}
-          <img src={logo} auto="logo" className="mr-10 hidden h-36 lg:block" />
+          <img src={logo} alt="logo" className="mr-10 hidden h-36 lg:block" />
           {/* Contact block starts here */}
           <div className="mx-auto block w-full px-4 md:w-1/2 lg:w-1/4">
             <h2 className="title-font mb-3 text-base font-bold tracking-widest text-gray-900 dark:text-white">
               {t(translations.contact)}
             </h2>
             <nav className="mb-10">
-              <a className="block text-gray-600 dark:text-white">
+              <p className="block text-gray-600 dark:text-white">
                 Sonja Liebhart
-              </a>
+              </p>
               {contacts.map((value) => (
                 <a
                   href={value.href}
+                  rel="noreferrer"
                   target="_blank"
                   className="block text-gray-600 hover:text-black dark:text-white"
                 >
@@ -142,6 +143,7 @@ export default function Footer() {
                   <a
                     href={value.href}
                     target="_blank"
+                    rel="noreferrer"
                     className="flex justify-center space-x-4 text-gray-600 hover:text-black dark:text-white md:justify-start"
                   >
                     <div>{value.icon}</div>
