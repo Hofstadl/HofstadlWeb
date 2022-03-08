@@ -7,13 +7,13 @@ import FacebookIcon from "../data/icons/FacebookIcon";
 import TwitterIcon from "../data/icons/TwitterIcon";
 import { I18nextContext, useTranslation } from "gatsby-plugin-react-i18next";
 import React, { useState, useContext } from "react";
-import activities from "../data/activities";
 import { addDays } from "date-fns";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import * as locales from "react-date-range/dist/locale";
 import RequestForm from "../components/RequestForm/RequestForm"
+import ActivitySlider from "../components/ActivitySlider";
 
 export default function Start({ data }) {
   const [state, setState] = useState([
@@ -140,51 +140,7 @@ export default function Start({ data }) {
 
       <div className="relative mt-32">
         <h1 className="">Aktivitäten</h1>
-        <ul className="mt-10 flex w-full snap-x gap-8 overflow-x-auto px-[5vw]">
-          {activities.map((activity) => (
-            <h2 key={activity.id}>
-              <li className="snap-center">
-                <div className="relative max-w-[95vw] flex-shrink-0 overflow-hidden rounded-3xl">
-                  <img
-                    src={activity.photo}
-                    alt="bild"
-                    className="absolute inset-0 h-full w-full object-cover object-bottom"
-                  />
-                  <div className="absolute inset-0 h-full w-full bg-gradient-to-tr from-black/75"></div>
-                  <div className="relative flex h-96 w-[300px] flex-col items-start justify-between p-4">
-                    <div></div>
-                    <div className="h-44 w-[267px] space-y-1 rounded-r-lg rounded-bl-lg bg-gradient-to-r from-white to-white tracking-tight">
-                      <svg
-                        className="h-5 w-5 dark:text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox={activity.viewBox}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d={activity.d}
-                        ></path>
-                      </svg>
-
-                      <h2 className="flex justify-center rounded-lg px-4 text-lg font-bold italic leading-4 text-slate-900">
-                        {activity.name}
-                      </h2>
-                      <h2 className="flex  justify-center rounded-lg px-4 text-center text-sm font-light leading-4 text-slate-600">
-                        {activity.destination}
-                      </h2>
-                      <h2 className="flex justify-center rounded-lg px-4 text-center text-sm font-medium leading-4 text-slate-900">
-                        {activity.description}
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </h2>
-          ))}
-        </ul>
+        <ActivitySlider/>
       </div>
 
       <div>
