@@ -1,23 +1,25 @@
-import React, { useState, useRef, Fragment } from "react";
-import { graphql, navigate } from "gatsby";
+import { Dialog, Transition } from "@headlessui/react";
+import { navigate } from "gatsby";
 import { Link, useTranslation } from "gatsby-plugin-react-i18next";
-import ContactIcon from "../../data/icons/ContactIcon";
-import TwitterIcon from "../../data/icons/TwitterIcon";
+import React, { Fragment, useRef, useState } from "react";
 import ActivitiesIcon from "../../data/icons/ActivitiesIcon";
+import CloseIcon from "../../data/icons/CloseIcon";
+import ContactIcon from "../../data/icons/ContactIcon";
 import HomeIcon from "../../data/icons/HomeIcon";
 import MenuIcon from "../../data/icons/MenuIcon";
-import CloseIcon from "../../data/icons/CloseIcon";
-import RoomsApartmentsIcon from "../../data/icons/RoomsApartmentsIcon";
+import TwitterIcon from "../../data/icons/TwitterIcon";
 import logo from "../../data/images/logo.png";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { Dialog, Transition } from "@headlessui/react";
-import { useChain, animated } from "@react-spring/web";
 
 const navs = [
   {
     name: "start",
     route: "/",
-    icon: <HomeIcon className={"h-8 w-8 fill-transparent stroke-black dark:stroke-white"} />,
+    icon: (
+      <HomeIcon
+        className={"h-8 w-8 fill-transparent stroke-black dark:stroke-white"}
+      />
+    ),
   },
   {
     name: "rooms-apartments",
@@ -32,7 +34,11 @@ const navs = [
   {
     name: "contact",
     route: "/contact/",
-    icon: <ContactIcon className={"h-8 w-8 fill-transparent stroke-black dark:fill-white"} />,
+    icon: (
+      <ContactIcon
+        className={"h-8 w-8 fill-transparent stroke-black dark:fill-white"}
+      />
+    ),
   },
 ];
 
@@ -45,11 +51,15 @@ export default function Navbar() {
     <nav className="fixed z-50 w-full bg-white dark:bg-neutral-900 dark:text-white">
       <div className={"mx-auto px-8 md:max-w-7xl"}>
         {/* Desktop navigation starts here */}
-        <div className={"hidden items-center justify-center space-x-6 md:flex h-24"}>
+        <div
+          className={
+            "hidden h-24 items-center justify-center space-x-6 md:flex"
+          }
+        >
           <img
             src={logo}
             onClick={() => navigate("/")}
-            className={"pr-8 h-16 w-auto pt-2"}
+            className={"h-16 w-auto pr-8 pt-2"}
             alt={"logo"}
           />
           {navs.map((nav) => (
@@ -62,7 +72,7 @@ export default function Navbar() {
           </div>
         </div>
         {/* Mobile navigation starts here */}
-        <div className={"flex items-center justify-between md:hidden h-20"}>
+        <div className={"flex h-20 items-center justify-between md:hidden"}>
           <img
             src={logo}
             onClick={() => navigate("/")}
@@ -90,12 +100,10 @@ export default function Navbar() {
             initialFocus={initialRef}
             ref={initialRef}
             onClose={() => setMenuOpen(false)}
-            className="fixed inset-0 z-40 h-full w-full overflow-auto dark:bg-neutral-900 bg-white md:hidden dark:text-white"
+            className="fixed inset-0 z-40 h-full w-full overflow-auto bg-white dark:bg-neutral-900 dark:text-white md:hidden"
           >
             <div className={"mx-auto px-8 md:max-w-7xl"}>
-              <div
-                className={"flex h-20 items-center justify-between"}
-              >
+              <div className={"flex h-20 items-center justify-between"}>
                 <img
                   src={logo}
                   onClick={() => navigate("/")}
@@ -103,7 +111,7 @@ export default function Navbar() {
                   alt={"logo"}
                 />
 
-                <LanguageSwitcher/>
+                <LanguageSwitcher />
               </div>
             </div>
             <div className="-mb-4 block border-b-2 pt-4" />
@@ -150,43 +158,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-export const query = graphql`
-  query ($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;
-
-/*
-<nav className={"fixed w-screen"}>
-      <div className={"flex items-center justify-center"}>
-        <div class="max-w-7xl min-w-sm bg-red-100">
-          <div
-            className={
-              "hidden h-24 items-center justify-center space-x-8 border px-8 md:flex"
-            }
-          >
-            <img src={logo} className={"h-16 w-auto"} alt={"logo"} />
-            {navs.map((nav) => (
-              <Link to={nav.route} key={nav.route}>
-                {t(nav.name)}
-              </Link>
-            ))}
-            <LanguageSwitcher />
-          </div>
-          <div className={"md:hidden h-24 flex items-center justify-between"}>
-            <img src={logo} className={"h-16 w-auto"} alt={"logo"} />
-            <MenuIcon className={"h-8 w-8"} fill={"#111"} stroke={"#111"} />
-          </div>
-        </div>
-      </div>
-    </nav>
-    */

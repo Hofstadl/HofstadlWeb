@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <div className={"h-20 md:h-24 dark:bg-black"} />
+      <div className={"h-20 dark:bg-black md:h-24"} />
       {children}
       <Footer />
     </>

@@ -1,7 +1,6 @@
-import React, { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import { graphql } from "gatsby";
+import React, { useState } from "react";
 
 export default function RoomApartmentSwitch() {
   const [room, setRoom] = useState(true);
@@ -53,17 +52,3 @@ export default function RoomApartmentSwitch() {
     </>
   );
 }
-
-export const query = graphql`
-  query ($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;

@@ -1,19 +1,17 @@
-import { graphql } from "gatsby";
-import { Switch } from "@headlessui/react";
-import Layout from "../components/Layout";
-import hofstadlHero from "../data/images/start/hofstadlHero.png";
-import InstagramIcon from "../data/icons/InstagramIcon";
-import FacebookIcon from "../data/icons/FacebookIcon";
-import TwitterIcon from "../data/icons/TwitterIcon";
-import { I18nextContext, useTranslation } from "gatsby-plugin-react-i18next";
-import React, { useState, useContext } from "react";
 import { addDays } from "date-fns";
+import { graphql } from "gatsby";
+import { I18nextContext, useTranslation } from "gatsby-plugin-react-i18next";
+import React, { useContext, useState } from "react";
 import { DateRange } from "react-date-range";
+import * as locales from "react-date-range/dist/locale";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
-import * as locales from "react-date-range/dist/locale";
-import RequestForm from "../components/RequestForm/RequestForm"
 import ActivitySlider from "../components/ActivitySlider";
+import RequestForm from "../components/RequestForm/RequestForm";
+import FacebookIcon from "../data/icons/FacebookIcon";
+import InstagramIcon from "../data/icons/InstagramIcon";
+import TwitterIcon from "../data/icons/TwitterIcon";
+import hofstadlHero from "../data/images/start/hofstadlHero.png";
 
 export default function Start({ data }) {
   const [state, setState] = useState([

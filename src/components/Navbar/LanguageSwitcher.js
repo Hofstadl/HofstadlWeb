@@ -1,12 +1,11 @@
-import React, { useContext, useState } from "react";
 import { Dialog } from "@headlessui/react";
 import {
   I18nextContext,
   Link,
   useI18next,
-  useTranslation,
+  useTranslation
 } from "gatsby-plugin-react-i18next";
-import { graphql } from "gatsby";
+import React, { useContext, useState } from "react";
 
 export default function LanguageSwitcher() {
   const context = useContext(I18nextContext);
@@ -62,17 +61,3 @@ export default function LanguageSwitcher() {
     </div>
   );
 }
-
-export const query = graphql`
-  query ($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;

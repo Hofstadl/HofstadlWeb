@@ -1,10 +1,9 @@
-import React from "react";
-import logo from "../data/images/logo.png";
-import { graphql } from "gatsby";
 import { Link, useTranslation } from "gatsby-plugin-react-i18next";
-import TwitterIcon from "../data/icons/TwitterIcon";
-import InstagramIcon from "../data/icons/InstagramIcon";
+import React from "react";
 import FacebookIcon from "../data/icons/FacebookIcon";
+import InstagramIcon from "../data/icons/InstagramIcon";
+import TwitterIcon from "../data/icons/TwitterIcon";
+import logo from "../data/images/logo.png";
 
 const contacts = [
   {
@@ -90,7 +89,7 @@ export default function Footer() {
       <div className="mx-auto flex flex-col items-center justify-evenly px-5 py-10 text-center md:flex-row md:items-center lg:items-start">
         {/* Container starts here */}
         <div className="md:flex md:text-left">
-          {/* Image starts here */}
+          {/* Logo starts here */}
           <img src={logo} alt="logo" className="mr-10 hidden h-36 lg:block" />
           {/* Contact block starts here */}
           <div className="mx-auto block w-full px-4 md:w-1/2 lg:w-1/4">
@@ -173,17 +172,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-export const query = graphql`
-  query ($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;
