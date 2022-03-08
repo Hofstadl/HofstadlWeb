@@ -1,5 +1,6 @@
 import React from "react";
 import activities from "../data/activities";
+import { graphql } from 'gatsby'
 
 export default function ActivitySlider() {
   return (

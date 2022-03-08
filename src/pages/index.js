@@ -13,97 +13,9 @@ import InstagramIcon from "../data/icons/InstagramIcon";
 import TwitterIcon from "../data/icons/TwitterIcon";
 import hofstadlHero from "../data/images/start/hofstadlHero.png";
 
-export default function Start({ data }) {
-  const [state, setState] = useState([
-    {
-      startDate: new Date(),
-      endDate: addDays(new Date(), 7),
-      key: "selection",
-    },
-  ]);
+export default function Start({data}) {
 
   const { t } = useTranslation();
-  const [persons, setPersons] = useState(1);
-  const context = useContext(I18nextContext);
-
-  var getDaysArray = function (start, end) {
-    end.setDate(end.getDate() - 1);
-    for (
-      var arr = [], dt = new Date(start);
-      dt < end;
-      dt.setDate(dt.getDate() + 1)
-    ) {
-      arr.push(new Date(dt));
-    }
-    return arr;
-  };
-
-  var zimmer;
-  var ferienwohnungen;
-
-  if (data.allCalendar.edges[0].node.summary === "Zimmer") {
-    zimmer = data.allCalendar.edges[0].node.children;
-    ferienwohnungen = data.allCalendar.edges[1].node.children;
-  } else {
-    zimmer = data.allCalendar.edges[1].node.children;
-    ferienwohnungen = data.allCalendar.edges[0].node.children;
-  }
-
-  const [room, setRoom] = useState(true);
-  const disableBookedDates = () => {
-    var datesToProcess = [];
-    if (room) {
-      for (let i = 0; i < zimmer.length; i++) {
-        datesToProcess.push(
-          getDaysArray(
-            new Date(zimmer[i].start.dateTime),
-            new Date(zimmer[i].end.dateTime)
-          )
-        );
-      }
-    } else {
-      for (let i = 0; i < ferienwohnungen.length; i++) {
-        datesToProcess.push(
-          getDaysArray(
-            new Date(ferienwohnungen[i].start.dateTime),
-            new Date(ferienwohnungen[i].end.dateTime)
-          )
-        );
-      }
-    }
-
-    var datesToProcessFlat = [].concat.apply([], datesToProcess);
-
-    for (let i = 0; i < datesToProcessFlat.length; i++) {
-      datesToProcessFlat[i].setHours(3, 3, 3, 3);
-    }
-
-    const count = {};
-
-    var datesToDisable = [];
-    for (const day of datesToProcessFlat) {
-      if (count[day]) {
-        count[day] += 1;
-        if (count[day] === 3) {
-          datesToDisable.push(day);
-        }
-      } else {
-        count[day] = 1;
-      }
-    }
-
-    return datesToDisable;
-  };
-
-  const applyLanguage = () => {
-    if (context.language === "cz") {
-      return "cs";
-    } else if (context.language === "en") {
-      return "enGB";
-    } else {
-      return "de";
-    }
-  };
 
   return (
     <>
@@ -117,7 +29,7 @@ export default function Start({ data }) {
               <span className="text-green">Waldviertel</span>
             </h1>
             <p className="mb-8 leading-relaxed">{t("welcome1")}</p>
-            <RequestForm/>
+            <RequestForm data={data} />
           </div>
           {/* Right section starts here */}
           <div className="flex w-full flex-col justify-center md:h-[74%] md:w-[50vw] lg:h-full">
@@ -141,24 +53,9 @@ export default function Start({ data }) {
         <ActivitySlider/>
       </div>
 
-      <div>
-        <div>{t("start")}</div>
 
-        <div className="items-center">
-          <div className="flex justify-center">
-            <DateRange
-              disabledDates={disableBookedDates()}
-              editableDateInputs={true}
-              onChange={(item) => setState([item.selection])}
-              moveRangeOnFirstSelection={false}
-              ranges={state}
-              locale={locales[applyLanguage()]}
-            />
-          </div>
-        </div>
-      </div>
-    </>
-  );
+        </>
+    );
 }
 
 export const query = graphql`
