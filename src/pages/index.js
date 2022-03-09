@@ -1,9 +1,6 @@
-import { addDays } from "date-fns";
 import { graphql } from "gatsby";
-import { I18nextContext, useTranslation } from "gatsby-plugin-react-i18next";
-import React, { useContext, useState } from "react";
-import { DateRange } from "react-date-range";
-import * as locales from "react-date-range/dist/locale";
+import { useTranslation } from "gatsby-plugin-react-i18next";
+import React from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import ActivitySlider from "../components/ActivitySlider";
