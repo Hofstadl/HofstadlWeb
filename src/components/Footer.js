@@ -60,16 +60,16 @@ const navs = [
     route: "/",
   },
   {
-    name: "rooms&apartments",
-    route: "/rooms-apartments/",
+    name: "rooms-apartments",
+    route: "/rooms-apartments",
   },
   {
     name: "activities",
-    route: "/activities/",
+    route: "/activities",
   },
   {
     name: "contact",
-    route: "/contact/",
+    route: "/contact",
   },
 ];
 
@@ -100,8 +100,9 @@ export default function Footer() {
               <p className="block text-gray-600 dark:text-white">
                 Sonja Liebhart
               </p>
-              {contacts.map((value) => (
+              {contacts.map((value, index) => (
                 <a
+                  key={index}
                   href={value.href}
                   rel="noreferrer"
                   target="_blank"
@@ -118,16 +119,14 @@ export default function Footer() {
               {t(translations.navigation)}
             </h2>
             <nav className="mb-10 list-none">
-              {navs.map((nav) => (
-                <li>
-                  <Link
-                    className="text-gray-600 hover:text-black dark:text-white"
-                    to={nav.route}
-                    key={nav.route}
-                  >
-                    {t(nav.name)}
-                  </Link>
-                </li>
+              {navs.map((nav, index) => (
+                <Link
+                  key={index}
+                  className="block text-gray-600 hover:text-black dark:text-white"
+                  to={nav.route}
+                >
+                  {t(nav.name)}
+                </Link>
               ))}
             </nav>
           </div>
@@ -137,18 +136,17 @@ export default function Footer() {
               {t(translations.followUs)}
             </h2>
             <nav className="mb-10 list-none space-y-3">
-              {socialMedien.map((value) => (
-                <li>
-                  <a
-                    href={value.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex justify-center space-x-4 text-gray-600 hover:text-black dark:text-white md:justify-start"
-                  >
-                    <div>{value.icon}</div>
-                    <div>{value.name}</div>
-                  </a>
-                </li>
+              {socialMedien.map((value, index) => (
+                <a
+                  key={index}
+                  href={value.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center space-x-3 text-gray-600 hover:text-black dark:text-white md:justify-start"
+                >
+                  <div>{value.icon}</div>
+                  <div>{value.name}</div>
+                </a>
               ))}
             </nav>
           </div>

@@ -10,8 +10,8 @@ import InstagramIcon from "../data/icons/InstagramIcon";
 import TwitterIcon from "../data/icons/TwitterIcon";
 import hofstadlHero from "../data/images/start/hofstadlHero.png";
 
-export default function Start({data}) {
-
+export default function Start({data, summary}) {
+console.log(summary)
   const { t } = useTranslation();
 
   return (

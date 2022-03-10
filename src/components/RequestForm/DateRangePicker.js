@@ -4,121 +4,126 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import * as locales from "react-date-range/dist/locale";
-import { I18nextContext, useTranslation } from "gatsby-plugin-react-i18next";
+import { I18nextContext } from "gatsby-plugin-react-i18next";
 
+export default function DateRangePicker({ data, room, setRoom }) {
+  const [state, setState] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(new Date(), 7),
+      key: "selection",
+    },
+  ]);
 
-export default function DateRangePicker({data, room, setRoom}) {
+  const [open, setOpen] = useState(false);
 
+  const context = useContext(I18nextContext);
 
-    const [state, setState] = useState([
-        {
-            startDate: new Date(),
-            endDate: addDays(new Date(), 7),
-            key: 'selection'
-        }
-    ]);
+  var getDaysArray = function (start, end) {
+    end.setDate(end.getDate() - 1);
+    for (
+      var arr = [], dt = new Date(start);
+      dt < end;
+      dt.setDate(dt.getDate() + 1)
+    ) {
+      arr.push(new Date(dt));
+    }
+    return arr;
+  };
 
-    const [open, setOpen] = useState(false);
+  var roomCalendar = 1,
+    apartmentCalendar = 0;
+  var calendars = data.allCalendar?.edges;
 
-    const context = useContext(I18nextContext);
+  if (calendars[0]?.node?.summary === "Zimmer") {
+    roomCalendar = 0;
+    apartmentCalendar = 1;
+  }
 
-    var getDaysArray = function (start, end) {
-        end.setDate(end.getDate() - 1);
-        for (
-            var arr = [], dt = new Date(start);
-            dt < end;
-            dt.setDate(dt.getDate() + 1)
-        ) {
-            arr.push(new Date(dt));
-        }
-        return arr;
-    };
+  var roomEvents = calendars[roomCalendar]?.node?.children ?? [];
+  var apartmentEvents = calendars[apartmentCalendar]?.node.children ?? [];
 
-    var zimmer;
-    var ferienwohnungen;
+  if (roomEvents.length === 0 || apartmentEvents.length === 0) {
+    console.warn("Google calender connection failed");
+  }
 
-    if (data.allCalendar.edges[0].node.summary === "Zimmer") {
-        zimmer = data.allCalendar.edges[0].node.children;
-        ferienwohnungen = data.allCalendar.edges[1].node.children;
+  const disableBookedDates = () => {
+    var datesToProcess = [];
+    if (room) {
+      for (let i = 0; i < roomEvents.length; i++) {
+        datesToProcess.push(
+          getDaysArray(
+            new Date(roomEvents[i].start.dateTime),
+            new Date(roomEvents[i].end.dateTime)
+          )
+        );
+      }
     } else {
-        zimmer = data.allCalendar.edges[1].node.children;
-        ferienwohnungen = data.allCalendar.edges[0].node.children;
+      for (let i = 0; i < apartmentEvents.length; i++) {
+        datesToProcess.push(
+          getDaysArray(
+            new Date(apartmentEvents[i].start.dateTime),
+            new Date(apartmentEvents[i].end.dateTime)
+          )
+        );
+      }
     }
 
-    const disableBookedDates = () => {
-        var datesToProcess = [];
-        if (room) {
-            for (let i = 0; i < zimmer.length; i++) {
-                datesToProcess.push(
-                    getDaysArray(
-                        new Date(zimmer[i].start.dateTime),
-                        new Date(zimmer[i].end.dateTime)
-                    )
-                );
-            }
-        } else {
-            for (let i = 0; i < ferienwohnungen.length; i++) {
-                datesToProcess.push(
-                    getDaysArray(
-                        new Date(ferienwohnungen[i].start.dateTime),
-                        new Date(ferienwohnungen[i].end.dateTime)
-                    )
-                );
-            }
+    var datesToProcessFlat = [].concat.apply([], datesToProcess);
+
+    for (let i = 0; i < datesToProcessFlat.length; i++) {
+      datesToProcessFlat[i].setHours(3, 3, 3, 3);
+    }
+
+    const count = {};
+
+    var datesToDisable = [];
+    for (const day of datesToProcessFlat) {
+      if (count[day]) {
+        count[day] += 1;
+        if (count[day] === 3) {
+          datesToDisable.push(day);
         }
+      } else {
+        count[day] = 1;
+      }
+    }
 
-        var datesToProcessFlat = [].concat.apply([], datesToProcess);
+    return datesToDisable;
+  };
 
-        for (let i = 0; i < datesToProcessFlat.length; i++) {
-            datesToProcessFlat[i].setHours(3, 3, 3, 3);
-        }
+  const applyLanguage = () => {
+    if (context.language === "cz") {
+      return "cs";
+    } else if (context.language === "en") {
+      return "enGB";
+    } else {
+      return "de";
+    }
+  };
 
-        const count = {};
-
-        var datesToDisable = [];
-        for (const day of datesToProcessFlat) {
-            if (count[day]) {
-                count[day] += 1;
-                if (count[day] === 3) {
-                    datesToDisable.push(day);
-                }
-            } else {
-                count[day] = 1;
-            }
-        }
-
-        return datesToDisable;
-    };
-
-    const applyLanguage = () => {
-        if (context.language === "cz") {
-            return "cs";
-        } else if (context.language === "en") {
-            return "enGB";
-        } else {
-            return "de";
-        }
-    };
-
-    return (
-        <>
-            <div className="items-center">
-                <button className="flex h-10 w-40 rounded-2xl shadow-inner shadow-neutral-200"
-                        onClick={() => setOpen(!open)}>Dauer Auswählen</button>
-                {open && (
-                    <div className="flex justify-center">
-                        <DateRange
-
-                            disabledDates={disableBookedDates()}
-                            editableDateInputs={true}
-                            onChange={item => setState([item.selection])}
-                            moveRangeOnFirstSelection={false}
-                            ranges={state}
-                            locale={locales[applyLanguage()]}
-                        />
-                    </div>
-                )}
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className="items-center">
+        <button
+          className="flex h-10 w-40 rounded-2xl shadow-inner shadow-neutral-200"
+          onClick={() => setOpen(!open)}
+        >
+          Dauer Auswählen
+        </button>
+        {open && (
+          <div className="flex justify-center">
+            <DateRange
+              disabledDates={disableBookedDates()}
+              editableDateInputs={true}
+              onChange={(item) => setState([item.selection])}
+              moveRangeOnFirstSelection={false}
+              ranges={state}
+              locale={locales[applyLanguage()]}
+            />
+          </div>
+        )}
+      </div>
+    </>
+  );
 }
