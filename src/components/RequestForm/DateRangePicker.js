@@ -20,7 +20,7 @@ export default function DateRangePicker({ data, room, setRoom }) {
   const context = useContext(I18nextContext);
 
   var getDaysArray = function (start, end) {
-    end.setDate(end.getDate() - 1);
+    end.setDate(end.getDate());
     for (
       var arr = [], dt = new Date(start);
       dt < end;
@@ -42,6 +42,7 @@ export default function DateRangePicker({ data, room, setRoom }) {
 
   var roomEvents = calendars[roomCalendar]?.node?.children ?? [];
   var apartmentEvents = calendars[apartmentCalendar]?.node.children ?? [];
+
 
   if (roomEvents.length === 0 || apartmentEvents.length === 0) {
     console.warn("Google calender connection failed");
@@ -70,6 +71,7 @@ export default function DateRangePicker({ data, room, setRoom }) {
     }
 
     var datesToProcessFlat = [].concat.apply([], datesToProcess);
+
 
     for (let i = 0; i < datesToProcessFlat.length; i++) {
       datesToProcessFlat[i].setHours(3, 3, 3, 3);

@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
-export default function RoomApartmentSwitch() {
-  const [room, setRoom] = useState(true);
+export default function RoomApartmentSwitch({room, setRoom}) {
   const { t } = useTranslation();
 
   return (
