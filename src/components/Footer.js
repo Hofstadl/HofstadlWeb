@@ -15,13 +15,9 @@ const contacts = [
     href: "tel:+436802167952",
   },
   {
-    data: "Merkenbrechts 22",
+    data: "Merkenbrechts 22, 3800 Göpfritz",
     href: "https://goo.gl/maps/TE9aXP4352q6S7yY8",
-  },
-  {
-    data: "3800 Göpfritz",
-    href: "https://goo.gl/maps/TE9aXP4352q6S7yY8",
-  },
+  }
 ];
 
 const socialMedien = [
@@ -155,7 +151,7 @@ export default function Footer() {
       <div className="bg-gray-100 dark:bg-neutral-900">
         <div className="container mx-auto flex flex-col flex-wrap py-4 px-5 sm:flex-row">
           <p className="text-center text-sm text-gray-500 dark:text-white sm:text-left">
-            Copyright © {new Date().getFullYear}
+            Copyright © {new Date().getFullYear()} Hofstadl
           </p>
           <span className="mt-2 inline-flex justify-center space-x-16 sm:ml-auto sm:mt-0 sm:justify-start">
             <a className="text-gray-500 dark:text-white">
