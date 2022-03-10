@@ -122,7 +122,6 @@ export default function DateRangePicker({ data, room, setRoom }) {
               moveRangeOnFirstSelection={false}
               ranges={state}
               locale={locales[applyLanguage()]}
-              minDate={new Date()}
             />
           </div>
         )}
