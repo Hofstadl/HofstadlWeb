@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { RadioGroup } from "@headlessui/react";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
