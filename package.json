@@ -16,6 +16,7 @@
   "dependencies": {
     "@headlessui/react": "^1.4.3",
     "@react-spring/web": "latest",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "gatsby": "latest",
     "gatsby-plugin-react-i18next": "latest",
     "gatsby-source-filesystem": "latest",
@@ -25,7 +26,9 @@
     "react": "latest",
     "react-div-100vh": "^0.7.0",
     "react-dom": "latest",
+    "react-easy-swipe": "^0.0.22",
     "react-i18next": "latest",
+    "react-icons": "^4.3.1",
     "react-parallax": "latest"
   },
   "devDependencies": {
