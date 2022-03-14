@@ -1,15 +1,16 @@
-import React from "react";
-import Layout from "../components/Layout";
+import React, { useEffect } from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
+import b from "../data/images/rooms-apartments/b.jpg";
+import a from "../data/images/rooms-apartments/a.jpg";
 
 export default function RoomsApartments() {
   const { t } = useTranslation();
-
+  
   return (
-    <Layout>
-      <div>{t("rooms&apartments")}</div>
-    </Layout>
+    <div>
+      {t("rooms&apartments")}
+    </div>
   );
 }
 

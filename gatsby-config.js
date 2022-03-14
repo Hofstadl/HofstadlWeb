@@ -11,6 +11,12 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-transformer-json`,
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/Layout`),
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/data/locales`,
@@ -36,6 +42,16 @@ module.exports = {
           nsSeparator: false,
         },
       },
+    },
+    {
+      resolve: `gatsby-source-google-calendar`,
+      options: {
+        calendarIds: [
+          '9gdggpsks7niic72l1ppo76fcg@group.calendar.google.com',
+          'm5q8o1slr45l6s03kdoenha7h8@group.calendar.google.com',
+        ],
+        maxResults: 2500,
+      }
     },
   ],
 };
