@@ -10,8 +10,8 @@ import InstagramIcon from "../data/icons/InstagramIcon";
 import TwitterIcon from "../data/icons/TwitterIcon";
 import hofstadlHero from "../data/images/start/hofstadlHero.png";
 
-export default function Start({data, summary}) {
-console.log(summary)
+export default function Start({ data, summary }) {
+  console.log(summary);
   const { t } = useTranslation();
 
   return (
@@ -29,9 +29,9 @@ console.log(summary)
             <RequestForm data={data} />
           </div>
           {/* Right section starts here */}
-          <div className="flex w-full flex-col justify-center md:h-[74%] md:w-[50vw] lg:h-full">
+          <div className="flex max-h-full w-full flex-col justify-center md:h-[74%] md:w-[50vw] lg:h-full">
             <img
-              className="h-[50vh] w-full rounded-2xl bg-blue object-cover object-center md:h-[90%] md:rounded-br-none md:rounded-tr-none md:rounded-tl-3xl"
+              className="h-auto max-h-full w-auto rounded-2xl bg-blue object-cover object-center md:h-[90%] md:rounded-br-none md:rounded-tr-none md:rounded-tl-3xl"
               alt="hero"
               src={hofstadlHero}
             />
@@ -47,12 +47,10 @@ console.log(summary)
 
       <div className="relative mt-32">
         <h1 className="">Aktivitäten</h1>
-        <ActivitySlider/>
+        <ActivitySlider />
       </div>
-
-
-        </>
-    );
+    </>
+  );
 }
 
 export const query = graphql`
