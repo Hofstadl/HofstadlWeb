@@ -3,18 +3,26 @@ import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import NextIcon from "../data/icons/NextIcon";
 import PrevisiousIcon from "../data/icons/PrevisiousIcon";
-import bild1 from "../data/images/start/ottenstein.jpg";
-import bild2 from "../data/images/start/rosenburg.jpg";
-import bild3 from "../data/images/start/ottenstein.jpg";
-import bild4 from "../data/images/start/Download.jpg";
-import bild5 from "../data/images/start/schlafzimmer.jpg";
-import bild6 from "../data/images/start/zimmer.jpg";
+import ferienwohnung_Kueche1 from "../data/images/start/ferienwohnung_Kueche1.jpg";
+import ferienwohnung_Kueche2 from "../data/images/start/ferienwohnung_Kueche2.jpg";
+import ferienwohnung_Zimmer1 from "../data/images/start/ferienwohnung_Zimmer1.jpg";
+import ferienwohnung_Zimmer2 from "../data/images/start/ferienwohnung_Zimmer2.jpg";
+import badezimmer from "../data/images/start/badezimmer.jpg";
+import zimmer1 from "../data/images/start/zimmer1.jpg";
+import zimmer2 from "../data/images/start/zimmer2.jpg";
+import zimmer3 from "../data/images/start/zimmer3.jpg";
 import Layout from "../components/Layout";
 
 export default function RoomsApartments() {
   const { t } = useTranslation();
-  const zimmerArray = [bild1, bild2, bild3];
-  const ferienwohnungArray = [bild4, bild5, bild6, bild1];
+  const zimmerArray = [zimmer1, zimmer2, zimmer3, badezimmer];
+  const ferienwohnungArray = [
+    ferienwohnung_Zimmer1,
+    ferienwohnung_Zimmer2,
+    ferienwohnung_Kueche1,
+    ferienwohnung_Kueche2,
+    badezimmer,
+  ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndex2, setCurrentIndex2] = useState(0);
   const slideRef = useRef();
@@ -57,33 +65,46 @@ export default function RoomsApartments() {
     <Layout>
       <section className="body-font bg-white dark:bg-neutral-900 dark:text-gray-400 ">
         <div>
-          <div className="h-10 w-2/5 rounded-t-lg bg-blue bg-opacity-30"></div>
-          <div ref={slideRef} className="block items-center md:flex">
-            <img
-              className="h-[25vh] w-full md:h-[50vh] md:w-[200%] md:rounded-r-lg"
-              src={zimmerArray[currentIndex]}
-              alt="Foto"
-            />
-            <div className="y-[50%] space-x-1/2 relative flex -translate-y-1/4 transform items-start justify-between px-3 md:absolute">
-              <button
-                onClick={() =>
-                  handleOnNextClick(zimmerArray, setCurrentIndex, currentIndex)
-                }
-              >
-                <PrevisiousIcon className="h-5 w-5 rounded-full bg-white fill-transparent stroke-black stroke-2"></PrevisiousIcon>
-              </button>
+          <div className="mx-auto h-10 w-2/3 rounded-t-lg bg-blue bg-opacity-30 md:mx-0 md:w-1/3"></div>
+          <div
+            ref={slideRef}
+            className="container mx-auto flex flex-col items-center md:mx-0 md:flex-row"
+          >
+            <div className="w-full md:w-1/2">
+              <img
+                className="object-fill md:rounded-r-lg"
+                src={zimmerArray[currentIndex]}
+                alt="Foto"
+              />
+              <div className="flex -translate-y-1/4 items-center justify-between px-3">
+                <button
+                  onClick={() =>
+                    handleOnPrevClick(
+                      ferienwohnungArray,
+                      setCurrentIndex,
+                      currentIndex
+                    )
+                  }
+                >
+                  <PrevisiousIcon className="h-5 w-5 rounded-full bg-white fill-transparent stroke-black stroke-2"></PrevisiousIcon>
+                </button>
 
-              <button
-                onClick={() =>
-                  handleOnPrevClick(zimmerArray, setCurrentIndex, currentIndex)
-                }
-              >
-                <NextIcon className="h-5 w-5 rounded-full bg-white fill-transparent stroke-black stroke-2"></NextIcon>
-              </button>
+                <button
+                  onClick={() =>
+                    handleOnNextClick(
+                      zimmerArray,
+                      setCurrentIndex,
+                      currentIndex
+                    )
+                  }
+                >
+                  <NextIcon className="h-5 w-5 rounded-full bg-white fill-transparent stroke-black stroke-2"></NextIcon>
+                </button>
+              </div>
             </div>
-            <div className="hidden h-64 w-20 rounded-r-lg bg-blue bg-opacity-30 md:block"></div>
+            <div className="hidden h-52 w-20 rounded-r-lg bg-blue bg-opacity-30 md:block"></div>
 
-            <div className="ml-20 mr-20">
+            <div className="mx-auto flex flex-col items-center text-center  md:w-1/2 md:items-start md:pl-10 md:text-left lg:flex-grow lg:pl-10">
               <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
                 Zimmer
               </h1>
@@ -103,8 +124,11 @@ export default function RoomsApartments() {
       <section className="body-font bg-white dark:bg-neutral-900 dark:text-gray-400">
         <div>
           <div className="y-40 ml-auto h-10 w-2/5 rounded-t-lg bg-blue bg-opacity-30"></div>
-          <div ref={slideRef} className="block  items-center md:flex">
-            <div className="ml-20 mr-20">
+          <div
+            ref={slideRef}
+            className="container mx-auto flex flex-col items-center md:mx-0 md:flex-row"
+          >
+            <div className="mx-auto flex flex-col items-center text-center  md:w-1/2 md:items-start md:pl-10 md:text-left lg:flex-grow lg:pl-10">
               <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
                 Ferienwohnungen
               </h1>
@@ -118,35 +142,37 @@ export default function RoomsApartments() {
               </p>
             </div>
             <div className="hidden h-64 w-20 rounded-l-lg bg-blue bg-opacity-30 md:block"></div>
-            <img
-              className="h-[25vh] w-full md:h-[50vh] md:w-[200%] md:rounded-l-lg"
-              src={ferienwohnungArray[currentIndex2]}
-              alt="Foto"
-            />
-            <div className="y-[50%] space-x-1/2 relative ml-3 flex -translate-y-1/4 transform items-start justify-between px-3 md:absolute md:ml-80">
-              <button
-                onClick={() =>
-                  handleOnNextClick(
-                    ferienwohnungArray,
-                    setCurrentIndex2,
-                    currentIndex2
-                  )
-                }
-              >
-                <PrevisiousIcon className="h-5 w-5 rounded-full bg-white fill-transparent stroke-black stroke-2"></PrevisiousIcon>
-              </button>
+            <div className="w-full md:w-1/2">
+              <img
+                className="object-fill md:rounded-l-lg"
+                src={ferienwohnungArray[currentIndex2]}
+                alt="Foto"
+              />
+              <div className="flex -translate-y-1/4 items-center justify-between px-3">
+                <button
+                  onClick={() =>
+                    handleOnPrevClick(
+                      ferienwohnungArray,
+                      setCurrentIndex2,
+                      currentIndex2
+                    )
+                  }
+                >
+                  <PrevisiousIcon className="h-5 w-5 rounded-full bg-white fill-transparent stroke-black stroke-2"></PrevisiousIcon>
+                </button>
 
-              <button
-                onClick={() =>
-                  handleOnPrevClick(
-                    ferienwohnungArray,
-                    setCurrentIndex2,
-                    currentIndex2
-                  )
-                }
-              >
-                <NextIcon className="h-5 w-5 rounded-full bg-white fill-transparent stroke-black stroke-2"></NextIcon>
-              </button>
+                <button
+                  onClick={() =>
+                    handleOnNextClick(
+                      ferienwohnungArray,
+                      setCurrentIndex2,
+                      currentIndex2
+                    )
+                  }
+                >
+                  <NextIcon className="h-5 w-5 rounded-full bg-white fill-transparent stroke-black stroke-2"></NextIcon>
+                </button>
+              </div>
             </div>
           </div>
         </div>
