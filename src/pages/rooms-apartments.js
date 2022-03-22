@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import NextIcon from "../data/icons/NextIcon";
@@ -27,7 +27,6 @@ export default function RoomsApartments() {
   const [currentIndex2, setCurrentIndex2] = useState(0);
   const slideRef = useRef();
   let count = 0;
-  let slideInterval;
 
   const handleOnNextClick = (array, setCurrentIndex, currentIndex) => {
     const productsLength = array.length;
@@ -40,26 +39,6 @@ export default function RoomsApartments() {
     count = (currentIndex + productsLength - 1) % productsLength;
     setCurrentIndex(count);
   };
-
-  /*const startSlider = () => {
-    slideInterval = setInterval(() => {
-      handleOnNextClick();
-    }, 5000);
-  };
-
-  const pauseSlider = () => {
-    clearInterval(slideInterval);
-  };
-
-  useEffect(() => {
-    startSlider();
-    slideRef.current.addEventListener("mouseenter", pauseSlider);
-    slideRef.current.addEventListener("mouseleave", startSlider);
-
-    return () => {
-      clearInterval(slideInterval);
-    };
-  }, []);*/
 
   return (
     <Layout>
