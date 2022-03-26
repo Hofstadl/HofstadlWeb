@@ -10,9 +10,10 @@ module.exports = {
         blue: "#BFD0E7",
         darkblue: "#98a6b8",
         purple: "#2B0727",
+        lightblue: "#4188ED",
       },
       boxShadow: {
-        inner: "inset 0px 0px 6px rgba(0, 0, 0, 0.25)",
+        inner: "inset 0px 0px 6px rgba(0, 0, 0, 0.4)",
       },
     },
   },

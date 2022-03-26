@@ -8,6 +8,7 @@ const { languages } = require("./src/data/locales/languages");
 module.exports = {
   /* Your site config here */
   plugins: [
+    `gatsby-plugin-mantine`,
     `gatsby-plugin-postcss`,
     `gatsby-transformer-json`,
     {
