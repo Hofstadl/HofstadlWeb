@@ -49,7 +49,8 @@ export default function Start({ data, summary }) {
         </div>
       </section>
 
-      <div className="mb-96 md:mb-6"></div>
+      {/* BENÖTIGT MAN VIELLEICHT NICHT, WENN BILD OBEN GEÄNDERT */}
+      <div className="mb-96 md:mb-1"></div>
       {/* Allgemein Section starts here */}
       <section class="body-font overflow-hidden text-gray-600">
         <div class="mx-auto flex flex-col-reverse flex-wrap items-center px-5 py-24 md:mx-0 md:flex-row md:px-0">
@@ -75,12 +76,16 @@ export default function Start({ data, summary }) {
                 unser großer Spielraum begeistern unsere jungen Gäste.
               </p>
               <div className="mb-5"></div>
-              <nav>
+
+              <nav className="flex flex-row space-x-3">
                 <Link
                   className="block text-gray-600 hover:text-black dark:text-white"
                   to="/contact/"
                 >
                   <p className="text-green">Mehr</p>
+                </Link>
+                <Link to="/contact/">
+                  <ArrowRight className="fill-full h-7 w-10 stroke-green" />
                 </Link>
               </nav>
             </div>
@@ -104,12 +109,15 @@ export default function Start({ data, summary }) {
                 dem Haus und Fernseher in jeder Wohnung/Zimmer an.
               </p>
               <div className="mb-5"></div>
-              <nav>
+              <nav className="flex flex-row space-x-3">
                 <Link
                   className="block text-gray-600 hover:text-black dark:text-white"
                   to="/rooms-apartments/"
                 >
                   <p className="text-green">Mehr</p>
+                </Link>
+                <Link to="/rooms-apartments/">
+                  <ArrowRight className="fill-full h-7 w-10 stroke-green" />
                 </Link>
               </nav>
             </div>
