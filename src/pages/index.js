@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import { useTranslation } from "gatsby-plugin-react-i18next";
+import { Link, useTranslation } from "gatsby-plugin-react-i18next";
 import React from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
@@ -8,7 +8,12 @@ import RequestForm from "../components/RequestForm/RequestForm";
 import FacebookIcon from "../data/icons/FacebookIcon";
 import InstagramIcon from "../data/icons/InstagramIcon";
 import TwitterIcon from "../data/icons/TwitterIcon";
+import ArrowRight from "../data/icons/ArrowRight";
 import hofstadlHero from "../data/images/start/hofstadlHero.png";
+import kueche from "../data/images/start/kuecheStartseite.jpg";
+import spielzimmer from "../data/images/start/spielzimmer.jpg";
+import zimmer from "../data/images/start/zimmerStartseite.jpg";
+import hofstadlAussen from "../data/images/readme/hofstadl.jpg";
 
 export default function Start({ data, summary }) {
   const { t } = useTranslation();
@@ -48,7 +53,108 @@ export default function Start({ data, summary }) {
           </div>
         </div>
       </section>
-      <div className="h-screen"></div>
+
+      {/* BENÖTIGT MAN VIELLEICHT NICHT, WENN BILD OBEN GEÄNDERT */}
+      <div className="mb-96 md:mb-1"></div>
+      {/* Allgemein Section starts here */}
+      <section class="body-font overflow-hidden text-gray-600">
+        <div class="mx-auto flex flex-col-reverse flex-wrap items-center px-5 py-24 md:mx-0 md:flex-row md:px-0">
+          <div class="-m-1 flex flex-col-reverse items-center md:-m-2 md:flex-row">
+            <div className="flex h-full w-full flex-row md:w-1/2">
+              <div class="w-full p-1 md:p-2">
+                <div className="mx-auto h-10 w-1/2 rounded-t-lg bg-blue bg-opacity-30 md:mx-0 md:w-2/3"></div>
+                <img
+                  alt="gallery"
+                  class="h-full w-full rounded object-cover object-center drop-shadow-xl md:rounded-r-lg"
+                  src={hofstadlAussen}
+                />
+              </div>
+            </div>
+            <div className="mx-auto flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-10 md:pr-10 md:text-left lg:flex-grow lg:pl-10">
+              <p className="text-green">ALLGEMEIN</p>
+              <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
+                Familie Liebahart begrüßt Sie im Hofstadl
+              </h1>
+              <p>
+                Durch unsere ruhige Lage ist unser Hofstadl der perfekte
+                Rückzugsort zu jeder Jahreszeit. Ganz besonders unsere Tiere und
+                unser großer Spielraum begeistern unsere jungen Gäste.
+              </p>
+              <div className="mb-5"></div>
+
+              <nav className="flex flex-row space-x-3">
+                <Link
+                  className="block text-gray-600 hover:text-black dark:text-white"
+                  to="/contact/"
+                >
+                  <p className="text-green">Mehr</p>
+                </Link>
+                <Link to="/contact/">
+                  <ArrowRight className="fill-full h-7 w-10 stroke-green" />
+                </Link>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Zimmer & Ferienwohnungen Section starts here */}
+      <section class="body-font overflow-hidden text-gray-600">
+        <div class="mx-auto flex flex-col flex-wrap items-center px-5 py-24 md:mx-0 md:flex-row md:px-0">
+          <div class="-m-1 flex flex-col items-center md:-m-2 md:flex-row">
+            <div className="mx-auto flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-10 md:pr-10 md:text-left lg:flex-grow lg:pl-10">
+              <p className="text-green">FERIENWOHNUNGEN & ZIMMER</p>
+              <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
+                Das beste für unsere Gäste
+              </h1>
+              <p>
+                Wir verfügen über insgesamt 3 Wohnungen und 3 Zimmern, in denen
+                unsere Gäste ihren Aufenthalt genießen können. Ebenfalls bieten
+                wir gratis WLAN im gesamten Gebäude, Parkplätze hinter und vor
+                dem Haus und Fernseher in jeder Wohnung/Zimmer an.
+              </p>
+              <div className="mb-5"></div>
+              <nav className="flex flex-row space-x-3">
+                <Link
+                  className="block text-gray-600 hover:text-black dark:text-white"
+                  to="/rooms-apartments/"
+                >
+                  <p className="text-green">Mehr</p>
+                </Link>
+                <Link to="/rooms-apartments/">
+                  <ArrowRight className="fill-full h-7 w-10 stroke-green" />
+                </Link>
+              </nav>
+            </div>
+            <div className="mb-5 md:mb-0"></div>
+            <div className="flex w-full flex-row md:w-1/2">
+              <div class="flex w-full flex-col flex-wrap">
+                <div class="w-full p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    class="h-full w-full rounded-md object-cover object-center drop-shadow-xl"
+                    src={zimmer}
+                  />
+                </div>
+                <div class="w-full p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    class=" h-full w-full rounded-md object-cover object-center drop-shadow-xl"
+                    src={spielzimmer}
+                  />
+                </div>
+              </div>
+              <div class="w-full p-1 md:p-2">
+                <img
+                  alt="gallery"
+                  class="h-full w-full rounded object-cover object-center drop-shadow-xl md:rounded-l-lg"
+                  src={kueche}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div className="relative mt-32">
         <h1 className="">Aktivitäten</h1>
