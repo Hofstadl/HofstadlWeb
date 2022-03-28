@@ -1,7 +1,7 @@
 import { Box, Center, SegmentedControl } from "@mantine/core";
 import dayjs from "dayjs";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ApartmentIcon from "../../data/icons/ApartmentIcon";
 import RightArrowSmIcon from "../../data/icons/RightArrowSmIcon";
 import RoomIcon from "../../data/icons/RoomIcon";
@@ -17,6 +17,20 @@ export default function RequestForm({ data }) {
     new Date(),
     dayjs().add(7, "day").toDate(),
   ]);
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+
+  /* useEffect(() => {
+    if (!isCalendarOpen) {
+      setDate([
+        date[0] ?? new Date(),
+        date[1] ??
+          dayjs(date[0]).add(7, "day").toDate() ??
+          dayjs().add(7, "day").toDate(),
+      ]);
+    }
+  }, [isCalendarOpen]); */
+
+  useEffect(() => {}, [date]);
 
   const roomApartmentData = [
     {
@@ -71,6 +85,8 @@ export default function RequestForm({ data }) {
             setDate={setDate}
             accomodation={accomodation}
             setAccomodation={setAccomodation}
+            isCalendarOpen={isCalendarOpen}
+            setIsCalendarOpen={setIsCalendarOpen}
           />
         </div>
       </div>

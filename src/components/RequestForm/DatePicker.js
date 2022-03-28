@@ -5,16 +5,22 @@ import "dayjs/locale/cs";
 import "dayjs/locale/de";
 import "dayjs/locale/en";
 import { I18nextContext, useTranslation } from "gatsby-plugin-react-i18next";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import CalendarIcon from "../../data/icons/CalendarIcon";
 
-export default function DatePicker({ data, date, setDate, accomodation }) {
+export default function DatePicker({
+  data,
+  date,
+  setDate,
+  accomodation,
+  isCalendarOpen,
+  setIsCalendarOpen,
+}) {
   const { t } = useTranslation();
   const context = useContext(I18nextContext);
   const isMobile = useMediaQuery("(max-width: 755px)");
-
   /*
   var getDaysArray = function (start, end) {
     setDate(end.getDate());
@@ -100,26 +106,28 @@ export default function DatePicker({ data, date, setDate, accomodation }) {
     return Array.of(dayjs());
   };
 
-  const applyLanguage = () => {
-    if (context.language === "cz") {
-      return "cs";
-    } else if (context.language === "en") {
-      return "en";
-    } else {
-      return "de";
-    }
-  };
-
   return (
     <>
       <DateRangePicker
-        locale={context.language == "cz" ? "cs" : context.language}
+        locale={context.language === "cz" ? "cs" : context.language}
         value={date}
         onChange={setDate}
-        excludeDate={(date) => disableBookedDates().includes(date)}
-        dayClassName={(date, modifiers) =>
-          modifiers.weekend ? "!text-green" : null
+        excludeDate={
+          (date) =>
+            console.info(
+              "TODO: disable Google calendar dates"
+            ) /*disableBookedDates().includes(date)*/
         }
+        dayClassName={(date, modifiers) =>
+          `${
+            modifiers.weekend &&
+            !dayjs().subtract(1, "day").isAfter(dayjs(date))
+              ? "!text-green"
+              : ""
+          } ${dayjs().isSame(dayjs(date), "day") ? "underline" : ""}`
+        }
+        minDate={dayjs().toDate()}
+        maxDate={dayjs().add(1, "year").toDate()}
         dropdownType={isMobile ? "modal" : "popover"}
         clearable={false}
         variant="unstyled"
@@ -129,18 +137,10 @@ export default function DatePicker({ data, date, setDate, accomodation }) {
           </p>
         }
         icon={<CalendarIcon />}
-        onDropdownClose={() => {
-          setDate([
-            !date[0] ? new Date() : date[0],
-            !date[1]
-              ? !date[0]
-                ? dayjs().add(7, "day").toDate()
-                : dayjs(date[0]).add(7, "day").toDate()
-              : date[1],
-          ]);
-        }}
         allowLevelChange={false}
         zIndex={10}
+        onDropdownOpen={() => setIsCalendarOpen(true)}
+        onDropdownClose={() => setIsCalendarOpen(false)}
         inputFormat={context.language === "en" ? "MMM D, ddd" : "D. MMM, ddd"}
         className="w-full max-w-[290px] rounded-xl shadow-inner shadow-neutral-200"
         classNames={{
