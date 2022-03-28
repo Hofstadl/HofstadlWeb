@@ -16,27 +16,32 @@ import zimmer from "../data/images/start/zimmerStartseite.jpg";
 import hofstadlAussen from "../data/images/readme/hofstadl.jpg";
 
 export default function Start({ data, summary }) {
-  console.log(summary);
   const { t } = useTranslation();
 
   return (
     <>
       {/* Hero section starts here */}
-      <section className="body-font bg-white dark:bg-neutral-900 dark:text-gray-400">
-        <div className="flex h-[calc(100vh-5rem)] w-full flex-col items-center md:h-[calc(100vh-6rem)] md:flex-row">
+      <section className="body-font flex justify-center bg-white dark:bg-neutral-900 dark:text-gray-400">
+        <div className="flex h-[calc(100vh-5rem)] w-full max-w-[1800px] flex-col items-center md:h-[calc(100vh-6rem)] md:flex-row">
           {/* Left section starts here */}
-          <div className="container mb-8 flex flex-col items-center justify-center px-10 py-6 text-center md:mb-0 md:h-full md:w-[50vw] md:items-start md:text-left lg:flex-grow">
+          <div className="container mb-8 flex flex-col items-center justify-center px-10 py-6 text-center md:mb-0 md:h-full md:w-[50vw] md:items-start md:text-left lg:flex-grow lg:pl-20">
             <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
               {t("welcome").split("-")[0]} <br />-{t("welcome").split("-")[1]}{" "}
               <span className="text-green">Waldviertel</span>
             </h1>
             <p className="mb-8 leading-relaxed">{t("welcome1")}</p>
+            <br />
+            <p className="mb-8 hidden leading-relaxed 2xl:block">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Est
+              placerat in egestas erat. Non sodales neque sodales ut etiam sit.
+            </p>
             <RequestForm data={data} />
           </div>
           {/* Right section starts here */}
-          <div className="flex max-h-full w-full flex-col justify-center md:h-[74%] md:w-[50vw] lg:h-full">
+          <div className="flex max-h-full w-full flex-col justify-center md:h-[74%] md:w-[50vw] lg:h-full 2xl:pr-10">
             <img
-              className="h-auto max-h-full w-auto rounded-2xl bg-blue object-cover object-center md:h-[90%] md:rounded-br-none md:rounded-tr-none md:rounded-tl-3xl"
+              className="h-auto max-h-full w-auto rounded-2xl bg-blue object-cover object-center md:h-[90%] md:rounded-br-none md:rounded-tr-none md:rounded-tl-3xl 2xl:rounded-3xl"
               alt="hero"
               src={hofstadlHero}
             />

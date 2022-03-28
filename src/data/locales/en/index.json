@@ -3,5 +3,9 @@
   "welcome1": "Our holiday apartments and rooms offer the perfect place to relax for young and old.",
   "room": "Room",
   "apartment": "Apartment",
-  "persons": "Persons"
+  "persons": "Persons",
+  "request": "Inquire now",
+  "checkIn": "Check-In",
+  "checkOut": "Check-Out",
+  "fullName": "Full name"
 }
