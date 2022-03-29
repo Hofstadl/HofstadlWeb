@@ -71,7 +71,7 @@ export default function Start({ data, summary }) {
               </div>
             </div>
             <div className="mx-auto flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-10 md:pr-10 md:text-left lg:flex-grow lg:pl-10">
-              <p className="text-green">ALLGEMEIN</p>
+              <p className="text-green">{t("general").toUpperCase()}</p>
               <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
                 Familie Liebahart begrüßt Sie im Hofstadl
               </h1>
@@ -84,12 +84,10 @@ export default function Start({ data, summary }) {
 
               <nav className="flex flex-row space-x-3">
                 <Link
-                  className="block text-gray-600 hover:text-black dark:text-white"
+                  className="flex space-x-3 text-gray-600 hover:text-black dark:text-white"
                   to="/contact/"
                 >
                   <p className="text-green">Mehr</p>
-                </Link>
-                <Link to="/contact/">
                   <ArrowRight className="fill-full h-7 w-10 stroke-green" />
                 </Link>
               </nav>
@@ -98,12 +96,12 @@ export default function Start({ data, summary }) {
         </div>
       </section>
 
-      {/* Zimmer & Ferienwohnungen Section starts here */}
+      {/* rooms & aparatments section starts here */}
       <section class="body-font overflow-hidden text-gray-600">
         <div class="mx-auto flex flex-col flex-wrap items-center px-5 py-24 md:mx-0 md:flex-row md:px-0">
           <div class="-m-1 flex flex-col items-center md:-m-2 md:flex-row">
             <div className="mx-auto flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-10 md:pr-10 md:text-left lg:flex-grow lg:pl-10">
-              <p className="text-green">FERIENWOHNUNGEN & ZIMMER</p>
+              <p className="text-green">{t("rooms-apartments").toUpperCase()}</p>
               <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
                 Das beste für unsere Gäste
               </h1>
@@ -116,12 +114,10 @@ export default function Start({ data, summary }) {
               <div className="mb-5"></div>
               <nav className="flex flex-row space-x-3">
                 <Link
-                  className="block text-gray-600 hover:text-black dark:text-white"
+                  className="flex space-x-3 text-gray-600 hover:text-black dark:text-white"
                   to="/rooms-apartments/"
                 >
                   <p className="text-green">Mehr</p>
-                </Link>
-                <Link to="/rooms-apartments/">
                   <ArrowRight className="fill-full h-7 w-10 stroke-green" />
                 </Link>
               </nav>
@@ -156,10 +152,22 @@ export default function Start({ data, summary }) {
         </div>
       </section>
 
-      <div className="relative mt-32">
-        <h1 className="">Aktivitäten</h1>
+      <section>
+        <div className="flex flex-col items-center">
+          <p className="text-green">{t("activities").toUpperCase()}</p>
+          <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
+            Beliebte Ausflugsziele in unserer Nähe
+          </h1>
+          <Link
+            className="flex space-x-3 text-gray-600 hover:text-black dark:text-white"
+            to="/activities/"
+          >
+            <p className="text-green">Mehr</p>
+            <ArrowRight className="fill-full h-7 w-10 stroke-green" />
+          </Link>
+        </div>
         <ActivitySlider />
-      </div>
+      </section>
     </>
   );
 }
