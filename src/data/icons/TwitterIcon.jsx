@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ApartmentIcon({
+export default function TwitterIcon({
   className = "h-6 w-6",
   fill = "none",
   stroke = "#3a3e42",
