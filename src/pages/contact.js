@@ -51,6 +51,11 @@ const socialMedien = [
   },
 ];
 
+const translations = {
+  contact: "contact",
+  followUs: "followUs",
+};
+
 export default function Contact() {
   const { t } = useTranslation();
 
@@ -75,21 +80,35 @@ export default function Contact() {
           <div class="mt-8 flex w-full flex-col items-center justify-center bg-white md:ml-auto md:mt-0 md:w-1/2 md:items-start md:py-8 lg:w-1/3">
             <div className="flex w-full flex-col items-center">
               <h2 class="title-font mb-1 text-lg font-medium text-gray-900">
-                Kontakt
+                {t(translations.contact)}
               </h2>
               <p class="mb-2 leading-relaxed text-gray-600">Sonja Liebhart</p>
-              {contacts.map((info) => (
-                <p className="mb-2">{info.data}</p>
+              {contacts.map((value, index) => (
+                <a
+                  key={index}
+                  href={value.href}
+                  rel="noreferrer"
+                  target="_blank"
+                  className="mb-2 block text-gray-600 hover:text-black dark:text-white"
+                >
+                  {value.data}
+                </a>
               ))}
               <div className="mb-10"></div>
               <h2 class="title-font mb-1 text-lg font-medium text-gray-900">
-                Folge uns
+                {t(translations.followUs)}
               </h2>
-
-              {socialMedien.map((socialMedia) => (
-                <p className="mb-4 flex flex-row">
-                  {socialMedia.icon} {socialMedia.name}
-                </p>
+              {socialMedien.map((value, index) => (
+                <a
+                  key={index}
+                  href={value.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mb-2 flex items-center justify-center space-x-3 text-gray-600 hover:text-black dark:text-white md:justify-start"
+                >
+                  <div>{value.icon}</div>
+                  <div>{value.name}</div>
+                </a>
               ))}
             </div>
           </div>
