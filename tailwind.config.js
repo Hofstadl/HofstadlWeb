@@ -15,6 +15,9 @@ module.exports = {
       boxShadow: {
         inner: "inset 0px 0px 6px rgba(0, 0, 0, 0.4)",
       },
+      backgroundImage: {
+        hero: "url('../data/images/start/hofstadlHero.png')",
+      },
     },
   },
   plugins: [
