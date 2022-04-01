@@ -88,12 +88,10 @@ export default function Start({ data, summary }) {
             <div className="mx-auto flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-10 md:pr-10 md:text-left lg:flex-grow lg:pl-10">
               <p className="text-green">{t("general").toUpperCase()}</p>
               <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
-                Familie Liebahart begrüßt Sie im Hofstadl
+                {t("generalTitel")}
               </h1>
               <p>
-                Durch unsere ruhige Lage ist unser Hofstadl der perfekte
-                Rückzugsort zu jeder Jahreszeit. Ganz besonders unsere Tiere und
-                unser großer Spielraum begeistern unsere jungen Gäste.
+              {t("generalText")}
               </p>
               <div className="mb-5"></div>
 
@@ -102,7 +100,7 @@ export default function Start({ data, summary }) {
                   className="flex space-x-3 text-gray-600 hover:text-black dark:text-white"
                   to="/contact/"
                 >
-                  <p className="text-green">Mehr</p>
+                  <p className="text-green">{t("more")}</p>
                   <ArrowRight className="fill-full h-7 w-10 stroke-green" />
                 </Link>
               </nav>
@@ -120,13 +118,10 @@ export default function Start({ data, summary }) {
                 {t("rooms-apartments").toUpperCase()}
               </p>
               <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
-                Das beste für unsere Gäste
+              {t("roomsApartmentTitel")}
               </h1>
               <p>
-                Wir verfügen über insgesamt 3 Wohnungen und 3 Zimmern, in denen
-                unsere Gäste ihren Aufenthalt genießen können. Ebenfalls bieten
-                wir gratis WLAN im gesamten Gebäude, Parkplätze hinter und vor
-                dem Haus und Fernseher in jeder Wohnung/Zimmer an.
+              {t("roomsApartmentText")}
               </p>
               <div className="mb-5"></div>
               <nav className="flex flex-row space-x-3">
@@ -134,7 +129,7 @@ export default function Start({ data, summary }) {
                   className="flex space-x-3 text-gray-600 hover:text-black dark:text-white"
                   to="/rooms-apartments/"
                 >
-                  <p className="text-green">Mehr</p>
+                  <p className="text-green">{t("more")}</p>
                   <ArrowRight className="fill-full h-7 w-10 stroke-green" />
                 </Link>
               </nav>
@@ -173,13 +168,13 @@ export default function Start({ data, summary }) {
         <div className="flex flex-col items-center">
           <p className="text-green">{t("activities").toUpperCase()}</p>
           <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
-            Beliebte Ausflugsziele in unserer Nähe
+            {t("activitiesTitel")}
           </h1>
           <Link
             className="flex space-x-3 text-gray-600 hover:text-black dark:text-white"
             to="/activities/"
           >
-            <p className="text-green">Mehr</p>
+            <p className="text-green">{t("more")}</p>
             <ArrowRight className="fill-full h-7 w-10 stroke-green" />
           </Link>
         </div>
