@@ -26,7 +26,7 @@ const socialMedien = [
     name: "Facebook",
     icon: (
       <FacebookIcon
-        className={"fill-full h-6 w-6 stroke-black dark:fill-white"}
+        className={"h-6 w-6 fill-black stroke-black dark:fill-white"}
       />
     ),
     href: "https://m.facebook.com/BiobauernhofLiebhart/?locale2=de_DE",
@@ -35,7 +35,7 @@ const socialMedien = [
     name: "Twitter",
     icon: (
       <TwitterIcon
-        className={"fill-full h-6 w-6 stroke-black dark:fill-white"}
+        className={"h-6 w-6 fill-black stroke-black dark:fill-white"}
       />
     ),
     href: "https://www.instagram.com/hofstadl_liebhart/",
@@ -44,7 +44,7 @@ const socialMedien = [
     name: "Instagram",
     icon: (
       <InstagramIcon
-        className={"fill-full h-6 w-6 stroke-black dark:fill-white"}
+        className={"h-6 w-6 fill-black stroke-black dark:fill-white"}
       />
     ),
     href: "https://www.instagram.com/hofstadl_liebhart/",
