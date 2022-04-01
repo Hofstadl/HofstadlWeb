@@ -13,6 +13,13 @@ import zimmer2 from "../data/images/start/zimmer2.jpg";
 import zimmer3 from "../data/images/start/zimmer3.jpg";
 import Layout from "../components/Layout";
 
+const translations = {
+  room: "room",
+  apartment: "apartment",
+  roomText: "roomText",
+  apartmentText: "apartmentText",
+};
+
 export default function RoomsApartments() {
   const { t } = useTranslation();
   const zimmerArray = [zimmer3, zimmer1, zimmer2, badezimmer];
@@ -80,16 +87,10 @@ export default function RoomsApartments() {
 
           <div className="mx-auto flex flex-col items-center text-center  md:w-1/2 md:items-start md:pl-10 md:pr-5 md:text-left lg:flex-grow lg:pl-10 lg:pr-5">
             <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
-              Zimmer
+              {t(translations.room)}
             </h1>
 
-            <p>
-              Unsere Zimmer verfügen über ein großes gemütliches Doppelbett für
-              2 Personen mit eigenem Bad und Balkon beziehungsweise Terrasse.
-              Bei Bedarf kann noch ein extra Zustellbett zur Verfügung gestellt
-              werden. In der großen Hofküche können Sie das Frühstück genießen,
-              um perfekt in den Tag zu starten.
-            </p>
+            <p>{t(translations.roomText)}</p>
           </div>
         </div>
       </section>
@@ -102,16 +103,10 @@ export default function RoomsApartments() {
         >
           <div className="mx-auto flex flex-col items-center text-center  md:w-1/2 md:items-start md:pl-10 md:pr-5 md:text-left lg:flex-grow lg:pl-10">
             <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
-              Ferienwohnungen
+              {t(translations.apartment)}
             </h1>
 
-            <p>
-              Unsere Ferienwohnungen verfügen über zwei Zimmer mit einem großen
-              Doppelbett. In der Wohnküche gibt es zusätzlich noch eine
-              Ausziehcouch, die bei Bedarf bezogen werden kann. Jede Wohnung hat
-              ein ausgestattetes Bad und einen Balkon beziehungsweise eine
-              Terrasse.
-            </p>
+            <p>{t(translations.apartmentText)}</p>
           </div>
           <div className="hidden h-52 w-20 rounded-l-lg bg-blue bg-opacity-30 md:block"></div>
           <div className="w-full md:w-1/2">
