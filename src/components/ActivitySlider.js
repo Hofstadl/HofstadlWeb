@@ -5,10 +5,10 @@ import { graphql } from "gatsby";
 export default function ActivitySlider() {
   return (
     <>
-      <ul className="mt-10 flex w-full snap-x gap-8 overflow-x-auto px-[5vw] pb-10 drop-shadow-xl">
+      <ul className="mt-10 flex w-full snap-x snap-mandatory gap-8 overflow-x-auto px-[5vw] pb-10 drop-shadow-xl">
         {activities.map((activity, index) => (
           <h2 key={index}>
-            <li className="snap-center">
+            <li className="snap-center ">
               <div className="mx-auto max-w-xs flex-shrink-0 overflow-hidden rounded-3xl bg-white shadow-lg dark:bg-gray-800">
                 <div className="flex h-96 w-[300px] flex-col">
                   <img

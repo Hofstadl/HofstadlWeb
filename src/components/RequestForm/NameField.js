@@ -9,7 +9,7 @@ export default function NameField() {
     <TextInput
       placeholder={t("fullName")}
       variant="unstyled"
-      className="min-w-[40px] flex-1 rounded-xl shadow-inner shadow-neutral-200 xl:mr-2"
+      className="w-full min-w-[40px] flex-1 rounded-xl shadow-inner shadow-neutral-200 xl:mr-2"
       classNames={{
         input: "text-center leading-none h-fit text-md",
         label:
