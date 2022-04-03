@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import FacebookIcon from "../data/icons/FacebookIcon";
 import TwitterIcon from "../data/icons/TwitterIcon";
 import InstagramIcon from "../data/icons/InstagramIcon";
+import ReactPannellum, { isLoaded } from "react-pannellum";
+import a from "../data/images/contact/a.jpg";
+import b from "../data/images/contact/b.jpg";
 
 const contacts = [
   {
@@ -56,11 +59,70 @@ const translations = {
   followUs: "followUs",
 };
 
+const scenes = [
+  {
+    imageSource: b,
+    author: "Author",
+    title: "Title",
+    description: "Deescription",
+    autoRotate: -1,
+    autoLoad: true,
+    autoRotateInactivityDelay: 600,
+    preview: b,
+    hotSpots: [
+      {
+        pitch: 14.1,
+        yaw: 1.5,
+        type: "scene",
+        text: "Baltimore Museum of Art",
+        sceneId: "0",
+      },
+    ],
+  },
+];
+
 export default function Contact() {
   const { t } = useTranslation();
 
+  const loadHotspots = () => {
+    scenes.map((scene, index) =>
+      ReactPannellum.addScene(`${index + 1}`, scene)
+    );
+  };
+
   return (
     <Layout>
+      <section>
+        <div className="flex justify-center">
+          <ReactPannellum
+            id={"360Tour"}
+            sceneId={"0"}
+            imageSource={a}
+            config={{
+              author: "Author",
+              title: "Title",
+              description: "Deescription",
+              autoRotate: -1,
+              autoLoad: true,
+              autoRotateInactivityDelay: 600,
+              doubleClickZoom: true,
+              preview: a,
+              hotSpots: [
+                {
+                  pitch: 20,
+                  yaw: 5,
+                  type: "scene",
+                  text: "Baltimore Museum of Art",
+                  sceneId: "1",
+                },
+              ],
+            }}
+            onPanoramaLoaded={loadHotspots}
+            className={"h-[80vh]"}
+          />
+        </div>
+      </section>
+
       <section class="body-font relative text-gray-600">
         <div class="container flex w-full flex-wrap justify-center px-5 py-24 sm:flex-nowrap">
           <div class="relative flex items-end justify-start overflow-hidden rounded-lg bg-gray-300 sm:mr-10 md:w-1/2 lg:w-2/3">
@@ -78,7 +140,7 @@ export default function Contact() {
             ></iframe>
           </div>
           <div class="mt-8 flex w-full flex-col items-center justify-center bg-white md:ml-auto md:mt-0 md:w-1/2 md:items-start md:py-8 lg:w-1/3">
-            <div className="flex w-full flex-col items-center">
+            <div className="flex w-full flex-col items-center text-center">
               <h2 class="title-font mb-1 text-lg font-medium text-gray-900">
                 {t(translations.contact)}
               </h2>

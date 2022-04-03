@@ -26,6 +26,7 @@
     "react-div-100vh": "^0.7.0",
     "react-dom": "latest",
     "react-i18next": "latest",
+    "react-pannellum": "^0.2.7",
     "react-parallax": "latest"
   },
   "devDependencies": {
