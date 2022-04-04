@@ -72,8 +72,8 @@ export default function Start({ data, summary }) {
 
       */}
       {/* Allgemein Section starts here */}
-      <section class="body-font overflow-hidden text-gray-600">
-        <div class="mx-auto flex flex-col-reverse flex-wrap items-center px-5 py-24 md:mx-0 md:flex-row md:px-0">
+      <section class="body-font flex justify-center overflow-hidden text-gray-600">
+        <div class="mx-auto flex max-w-[1800px] flex-col-reverse  flex-wrap items-center px-5 py-24 md:mx-0 md:flex-row md:px-0 lg:flex-grow lg:pl-20">
           <div class="-m-1 flex flex-col-reverse items-center md:-m-2 md:flex-row">
             <div className="flex h-full w-full flex-row md:w-1/2">
               <div class="w-full p-1 md:p-2">
@@ -90,9 +90,7 @@ export default function Start({ data, summary }) {
               <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
                 {t("generalTitel")}
               </h1>
-              <p>
-              {t("generalText")}
-              </p>
+              <p>{t("generalText")}</p>
               <div className="mb-5"></div>
 
               <nav className="flex flex-row space-x-3">
@@ -110,19 +108,17 @@ export default function Start({ data, summary }) {
       </section>
 
       {/* rooms & aparatments section starts here */}
-      <section class="body-font overflow-hidden text-gray-600">
-        <div class="mx-auto flex flex-col flex-wrap items-center px-5 py-24 md:mx-0 md:flex-row md:px-0">
+      <section class="body-font flex justify-center overflow-hidden text-gray-600">
+        <div class="mx-auto flex max-w-[1800px] flex-col flex-wrap items-center px-5 py-24 md:mx-0 md:flex-row md:px-0 lg:flex-grow lg:pr-20">
           <div class="-m-1 flex flex-col items-center md:-m-2 md:flex-row">
-            <div className="mx-auto flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-10 md:pr-10 md:text-left lg:flex-grow lg:pl-10">
+            <div className="mx-auto flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-10 md:pr-10 md:text-left">
               <p className="text-green">
                 {t("rooms-apartments").toUpperCase()}
               </p>
               <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
-              {t("roomsApartmentTitel")}
+                {t("roomsApartmentTitel")}
               </h1>
-              <p>
-              {t("roomsApartmentText")}
-              </p>
+              <p>{t("roomsApartmentText")}</p>
               <div className="mb-5"></div>
               <nav className="flex flex-row space-x-3">
                 <Link
