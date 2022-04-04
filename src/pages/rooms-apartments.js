@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import NextIcon from "../data/icons/NextIcon";
@@ -32,7 +32,6 @@ export default function RoomsApartments() {
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndex2, setCurrentIndex2] = useState(0);
-  const slideRef = useRef();
   let count = 0;
 
   const handleOnNextClick = (array, setCurrentIndex, currentIndex) => {
@@ -48,13 +47,10 @@ export default function RoomsApartments() {
   };
 
   return (
-    <Layout>
+    <>
       <section className="body-font bg-white dark:bg-neutral-900 dark:text-gray-400 ">
         <div className="mx-auto h-10 w-2/3 rounded-t-lg bg-blue bg-opacity-30 md:mx-0 md:w-1/3"></div>
-        <div
-          ref={slideRef}
-          className="mx-auto flex flex-col items-center px-4 md:mx-0 md:flex-row md:px-0"
-        >
+        <div className="mx-auto flex flex-col items-center px-4 md:mx-0 md:flex-row md:px-0">
           <div className="w-full md:w-1/2">
             <img
               className="object-cover object-center md:rounded-r-lg"
@@ -97,10 +93,7 @@ export default function RoomsApartments() {
       <div className="mb-10"></div>
 
       <section className="body-font bg-white dark:bg-neutral-900 dark:text-gray-400">
-        <div
-          ref={slideRef}
-          className="mx-auto flex flex-col-reverse items-center px-4 md:mx-0 md:flex-row md:px-0"
-        >
+        <div className="mx-auto flex flex-col-reverse items-center px-4 md:mx-0 md:flex-row md:px-0">
           <div className="mx-auto flex flex-col items-center text-center  md:w-1/2 md:items-start md:pl-10 md:pr-5 md:text-left lg:flex-grow lg:pl-10">
             <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
               {t(translations.apartment)}
@@ -144,7 +137,7 @@ export default function RoomsApartments() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
 
