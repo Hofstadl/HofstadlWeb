@@ -1,20 +1,38 @@
 [
   {
-    "name": "reservoir",
-    "destination": "Ottenstein",
-    "description": "ottensteinDescription",
-    "photo": "/data/images/start/ottenstein.jpg"
+    "name": "Stausee Ottenstein",
+    "destination": "Peygarten-Ottenstein 69, 3532 Rastenfeld",
+    "description": "Der Stausee Ottenstein bietet nicht nur eine wunderschöne Kulisse zum Baden, sondern ist mit seinen bewaldeten Ufern der perfekte Platz zum Wandern oder Radfahren.",
+    "photo": "../../ottenstein.jpg"
   },
   {
-    "name": "reservoir",
-    "destination": "Ottenstein",
-    "description": "ottensteinDescription",
-    "photo": "/data/images/start/ottenstein.jpg"
+    "name": "Solefelsenbad Gmünd",
+    "destination": "Albrechtser Str. 10-12, 3950 Gmünd",
+    "description": "Die Süß- und Salzwasserbecken und die große Saunalandschaft begeistern die Gäste des Solefelsenbades ganz besonders. Aber auch für die kleinen Gäste gibt es ein Kinderbecken und eine Erlebnisrutsche zum austoben.",
+    "photo": "../../solefelsenbad-gmuend.jpg"
   },
   {
-    "name": "reservoir",
-    "destination": "Ottenstein",
-    "description": "ottensteinDescription",
-    "photo": "/data/images/start/ottenstein.jpg"
+    "name": "Biohof Lirnberger",
+    "destination": "Merkenbrechts 28, 3800 Merkenbrechts",
+    "description": "Ein tierisches und aufregendes Abenteuer bietet der Biohof Lirnbeger mit seinen Alpaka Wanderungen. Die Alpakas Lennard, José, Fernando und Alfredo freuen sich über euren Besuch.",
+    "photo": "../../ottenstein.jpg"
+  },
+  {
+    "name": "Rosenburg",
+    "destination": "Rosenburg 1, 3573 Rosenburg",
+    "description": "Der Kletterwald auf der Rosenburg besteht aus mehreren Parkours. Die Besonderheit des Kletterparks sind die abenteuerlichen Höhen, mit einem atemberaubenden Weitblick über das liebliche Kamptal.",
+    "photo": "../../rosenburg-kletterpark.jpg"
+  },
+  {
+    "name": "Lohnbachfälle",
+    "destination": "Rappottenstein 24 3911 Rappottenstein",
+    "description": "Der Lohnbachfall ist eine ca. 200 m lange Schluchtstrecke des Lohnbaches. Wechselnde Breiten unterstreichen die wildromantische Schönheit der Schlucht und bieten das perfekte Wander Erlebnis.",
+    "photo": "../../lohnbachfall.jpg"
+  },
+  {
+    "name": "Waldviertel-Radweg",
+    "destination": "Von Krems über Horn, Gmünd und Maria Taferl bis nach Klein Pöchlarn",
+    "description": "Der Waldviertel-Radweg durchzieht das gesamte Waldviertel und führt zu den schönsten Sehenswürdigkeiten der Region.",
+    "photo": "../../radweg.jpg"
   }
 ]

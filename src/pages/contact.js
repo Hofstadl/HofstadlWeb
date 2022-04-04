@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import Layout from "../components/Layout";
+import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import FacebookIcon from "../data/icons/FacebookIcon";
@@ -91,7 +90,7 @@ export default function Contact() {
   };
 
   return (
-    <Layout>
+    <>
       <section>
         <div className="flex justify-center">
           <ReactPannellum
@@ -176,7 +175,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
 
