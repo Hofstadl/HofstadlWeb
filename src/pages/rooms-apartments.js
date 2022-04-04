@@ -48,7 +48,7 @@ export default function RoomsApartments() {
   };
 
   return (
-    <Layout>
+    <>
       <section className="body-font bg-white dark:bg-neutral-900 dark:text-gray-400 ">
         <div className="mx-auto h-10 w-2/3 rounded-t-lg bg-blue bg-opacity-30 md:mx-0 md:w-1/3"></div>
         <div
@@ -144,7 +144,7 @@ export default function RoomsApartments() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
 

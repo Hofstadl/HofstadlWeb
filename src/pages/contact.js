@@ -4,7 +4,7 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 import FacebookIcon from "../data/icons/FacebookIcon";
 import TwitterIcon from "../data/icons/TwitterIcon";
 import InstagramIcon from "../data/icons/InstagramIcon";
-import ReactPannellum, { isLoaded } from "react-pannellum";
+import ReactPannellum from "react-pannellum";
 import a from "../data/images/contact/a.jpg";
 import b from "../data/images/contact/b.jpg";
 

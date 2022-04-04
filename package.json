@@ -46,6 +46,7 @@
     "react-easy-swipe": "^0.0.22",
     "react-i18next": "^11.15.5",
     "react-icons": "^4.3.1",
+    "react-pannellum": "^0.2.7",
     "rsuite": "^5.6.1",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
