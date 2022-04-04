@@ -43,97 +43,81 @@
   },
   {
     "name": "Waldbad Groß-Sieghharts",
-    "destination": "",
     "description": "descriptionWaldbad",
     "photo": "../../activities/waldbad-gross-siegharts.jpg"
   },
   {
     "name": "Freibad Waidhofen",
-    "destination": "",
     "description": "descriptionWaidhofen",
     "photo": "../../activities/freibad-waidhofen.jpg"
   },
   {
     "name": "Freibad Horn",
-    "destination": "",
     "description": "descriptionHorn",
     "photo": "../../activities/freibad-horn.jpg"
   },
   {
     "name": "Freibad Zwettl",
-    "destination": "",
     "description": "descriptionZwettl",
     "photo": "../../activities/freibad-zwettl.png"
   },
   {
     "name": "Stadtsee Allentsteig",
-    "destination": "",
     "description": "descriptionAllentsteig",
     "photo": "../../activities/stadtsee-allentsteig.jpg"
   },
   {
     "name": "Thayatal Vitalbad",
-    "destination": "",
     "description": "descriptionThayatal",
     "photo": "../../activities/thayatal-vitalbad.jpg"
   },
   {
     "name": "Strandbad Gmünd",
-    "destination": "",
     "description": "descriptionStrandbadGmuend",
     "photo": "../../activities/gmuender-strandbad.jpg"
   },
   {
     "name": "Moorbad Schrems",
-    "destination": "",
     "description": "descriptionMoorbad",
     "photo": "../../activities/moorbad-schrems.jpg"
   },
   {
     "name": "Privatbrauerei Zwettl",
-    "destination": "",
     "description": "descriptionPrivatbrauerei",
     "photo": "../../activities/privatbrauerei-zwettl.jpg"
   },
   {
     "name": "Ruine Dobra",
-    "destination": "",
     "description": "descriptionDobra",
     "photo": "../../activities/ruine-dobra.jpg"
   },
   {
     "name": "Schloss Greilenstein",
-    "destination": "",
     "description": "descriptionGreilenstein",
     "photo": "../../activities/schloss-greillenstein.jpg"
   },
   {
     "name": "Ruine Kollmitz",
-    "destination": "",
     "description": "descriptionKollmitz",
     "photo": "../../activities/burgruine_Kollmitz.jpg"
   },
   {
     "name": "Kittenberger Erlebnisgärten",
-    "destination": "",
     "description": "descriptionKittenberger",
     "photo": "../../activities/kittenberger-erlebnisgarten.jpg"
   },
   {
     "name": "Unterwasserreich Schrems",
-    "destination": "",
     "description": "descriptionUnterwasserreich",
     "photo": "../../activities/unterwasserreich-schrems.jpg"
   },
   {
     "name": "Naturpark Blockheide",
-    "destination": "",
     "description": "descriptionNaturpark",
     "photo": "../../activities/naturpark-blockheide.jpg"
   },
   {
     "name": "Himmelsleiter",
-    "destination": "",
     "description": "descriptionHimmelsleiter",
     "photo": "../../activities/himmelsleiter-schrems.jpg"
   }
