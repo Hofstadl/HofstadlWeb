@@ -6,7 +6,7 @@ export default function Imprint() {
   const { t } = useTranslation();
 
   return (
-    <div className="ml-20 mr-20">
+    <div className="ml-20 mr-20 mt-6">
       <h1 className="title-font text-3xl font-medium text-black dark:text-white sm:text-4xl">
         Impressum
       </h1>
