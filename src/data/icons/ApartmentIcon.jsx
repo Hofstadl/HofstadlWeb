@@ -1,8 +1,6 @@
 import React from "react";
 
-export default function ApartmentIcon({
-  className = "h-6 w-6"
-}) {
+export default function ApartmentIcon({ className = "h-6 w-6" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

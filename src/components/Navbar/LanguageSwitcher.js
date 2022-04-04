@@ -3,9 +3,10 @@ import {
   I18nextContext,
   Link,
   useI18next,
-  useTranslation
+  useTranslation,
 } from "gatsby-plugin-react-i18next";
 import React, { useContext, useState } from "react";
+import { Button } from "@mantine/core";
 
 export default function LanguageSwitcher() {
   const context = useContext(I18nextContext);
@@ -16,7 +17,9 @@ export default function LanguageSwitcher() {
   return (
     <div>
       <button
-        className={"rounded-xl py-3 px-8 text-green shadow-inner dark:shadow-black shadow-neutral-200"}
+        className={
+          "rounded-xl py-3 px-8 text-green shadow-inner shadow-neutral-200"
+        }
         onClick={() => setMenuOpen(true)}
       >
         {context.language.toUpperCase()}
@@ -24,7 +27,7 @@ export default function LanguageSwitcher() {
       <Dialog
         as="div"
         open={menuOpen}
-        className="fixed w-full inset-0 z-50 px-8 overflow-y-auto"
+        className="fixed inset-0 z-50 w-full overflow-y-auto px-8"
         onClose={() => setMenuOpen(false)}
       >
         <div className="flex min-h-screen items-center justify-center">
@@ -32,7 +35,7 @@ export default function LanguageSwitcher() {
 
           <div
             className={
-              "my-8 inline-block w-full max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-neutral-800 p-6 text-left align-middle shadow-xl transition-all"
+              "my-8 inline-block w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all dark:bg-neutral-800"
             }
           >
             <Dialog.Title

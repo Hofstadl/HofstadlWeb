@@ -3,5 +3,16 @@
   "welcome1": "Our holiday apartments and rooms offer the perfect place to relax for young and old.",
   "room": "Room",
   "apartment": "Apartment",
-  "persons": "Persons"
+  "persons": "Persons",
+  "request": "Inquire now",
+  "checkIn": "Check-In",
+  "checkOut": "Check-Out",
+  "fullName": "Full name",
+  "general": "General",
+  "generalTitel": "The Liebhart family welcomes you to the Hofstadl",
+  "generalText": "Due to our quiet location, our Hofstadl is the ideal retreat at any time of the year. Our young guests love our animals and our large playroom where they find a lot of different activities.",
+  "roomsApartmentTitel": "The best for our guests",
+  "roomsApartmentText": "We have a total of 3 apartments and 3 rooms where our guests can enjoy their stay. We also offer free WiFi throughout the building, parking spaces behind and in front of the house and televisions in every apartment and room.",
+  "more": "More",
+  "activitiesTitel": "Popular excursion destinations near us"
 }

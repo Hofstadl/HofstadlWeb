@@ -3,5 +3,16 @@
   "welcome1": "Unsere Ferienwohnungen und Zimmer bieten den perfekten Erholungsort für Groß und Klein.",
   "room": "Zimmer",
   "apartment": "Ferienwohnung",
-  "persons": "Personen"
+  "persons": "Personen",
+  "request": "Jetzt anfragen",
+  "checkIn": "Anreise",
+  "checkOut": "Abreise",
+  "fullName": "Vollständiger Name",
+  "general": "Generell",
+  "generalTitel": "Familie Liebhart begrüßt Sie im Hofstadl",
+  "generalText": "Durch unsere ruhige Lage ist unser Hofstadl der perfekte Rückzugsort zu jeder Jahreszeit. Ganz besonders unsere Tiere und unser großer Spielraum begeistern unsere jungen Gäste.",
+  "roomsApartmentTitel": "Das beste für unsere Gäste",
+  "roomsApartmentText": "Wir verfügen über insgesamt 3 Wohnungen und 3 Zimmern, in denen unsere Gäste ihren Aufenthalt genießen können. Ebenfalls bieten wir gratis WLAN im gesamten Gebäude, Parkplätze hinter und vor dem Haus und Fernseher in jeder Wohnung/Zimmer an.",
+  "more": "Mehr",
+  "activitiesTitel": "Beliebte Ausflugsziele in unserer Nähe"
 }
