@@ -1,7 +1,9 @@
 import React from "react";
 
-export default function ApartmentIcon({
-  className = "h-6 w-6"
+export default function InstagramIcon({
+  className = "h-6 w-6",
+  fill = "none",
+  stroke = "#3a3e42"
 }) {
   return (
     <svg
