@@ -2824,13 +2824,6 @@ address@1.1.2, address@^1.0.1:
   resolved "https://registry.yarnpkg.com/address/-/address-1.1.2.tgz#bf1116c9c758c51b7a933d296b72c221ed9428b6"
   integrity sha512-aT6camzM4xEA54YVJYSqxz1kv4IHnQZRtThJJHhUMRExaU5spC7jX5ugSwTaTgJliIgs4VhZOk7htClvQ/LmRA==
 
-aframe-animation-component@^5.1.2:
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/aframe-animation-component/-/aframe-animation-component-5.1.2.tgz#f08becfcde91b0c9d2bf308b03cbdacd85c320d0"
-  integrity sha512-DGUsRGB6TaN0rRKGYRrU0M1eblhpnMMYR1Vhulh0d5TxQRNszWJ5I1aHB/YW6wcj0gO89hLabSe5Is5NFpUeGg==
-  dependencies:
-    animejs "2.2.0"
-
 aframe-react@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/aframe-react/-/aframe-react-4.4.0.tgz#f8af660bc4f64746d7cddb065ad9cc5e88f358b9"
@@ -2898,11 +2891,6 @@ an-array@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/an-array/-/an-array-1.0.0.tgz#c125a5bb8257778e35f4b4f6aa9c7d0fa9e42665"
   integrity sha1-wSWlu4JXd4419LT2qpx9D6nkJmU=
-
-animejs@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/animejs/-/animejs-2.2.0.tgz#35eefdfc535b81949c9cb06f0b3e60c02e6fdc80"
-  integrity sha1-Ne79/FNbgZScnLBvCz5gwC5v3IA=
 
 anser@^2.1.0:
   version "2.1.1"
