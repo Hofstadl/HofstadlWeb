@@ -165,7 +165,7 @@ export default function Start({ data, summary }) {
       </section>
 
       <section>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center justify-center text-center">
           <p className="text-green">{t("activities").toUpperCase()}</p>
           <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
             {t("activitiesTitel")}
