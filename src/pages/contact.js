@@ -61,9 +61,7 @@ const translations = {
 const scenes = [
   {
     imageSource: b,
-    author: "Author",
-    title: "Title",
-    description: "Deescription",
+    title: "Innenhof",
     autoRotate: -1,
     autoLoad: true,
     autoRotateInactivityDelay: 600,
@@ -73,7 +71,7 @@ const scenes = [
         pitch: 14.1,
         yaw: 1.5,
         type: "scene",
-        text: "Baltimore Museum of Art",
+        text: "Garten",
         sceneId: "0",
       },
     ],
@@ -98,9 +96,7 @@ export default function Contact() {
             sceneId={"0"}
             imageSource={a}
             config={{
-              author: "Author",
-              title: "Title",
-              description: "Deescription",
+              title: "Garten",
               autoRotate: -1,
               autoLoad: true,
               autoRotateInactivityDelay: 600,
@@ -111,7 +107,7 @@ export default function Contact() {
                   pitch: 20,
                   yaw: 5,
                   type: "scene",
-                  text: "Baltimore Museum of Art",
+                  text: "Innenhof",
                   sceneId: "1",
                 },
               ],

@@ -21,6 +21,7 @@
     "@mantine/core": "^4.0.7",
     "@mantine/dates": "^4.0.7",
     "@mantine/hooks": "^4.0.7",
+    "@mui/lab": "^5.0.0-alpha.75",
     "@mui/material": "^5.4.2",
     "@react-spring/web": "^9.4.3",
     "@reduxjs/toolkit": "^1.8.0",
