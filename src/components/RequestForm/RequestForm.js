@@ -97,17 +97,19 @@ export default function RequestForm({ data }) {
             name="form-name"
             defaultValue="Buchungsanfrage"
           />
-          <input type="text" defaultValue={accomodation} value={accomodation} className="hidden" />
-          <input type="number" defaultValue={persons} value={persons} className="hidden" />
+          <input type="text" name="Unterkunft" defaultValue={accomodation} value={accomodation} className="hidden" />
+          <input type="number" name="Personen" defaultValue={persons} value={persons} className="hidden" />
           <input
             type="date"
             value={date[0]?.toISOString().slice(0, 10)}
+            name="Anreisedatum"
             defaultValue={date[0]?.toISOString().slice(0, 10)}
             className="hidden"
           />
           <input
             type="date"
             value={date[1]?.toISOString().slice(0, 10)}
+            name="Abreisedatum"
             defaultValue={date[1]?.toISOString().slice(0, 10)}
             className="hidden"
           />
