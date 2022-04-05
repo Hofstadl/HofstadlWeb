@@ -7,7 +7,7 @@ export default function NameField() {
 
   return (
     <TextInput
-      placeholder={t("fullName")}
+      placeholder={t("email")}
       variant="unstyled"
       className="w-full min-w-[40px] flex-1 rounded-xl shadow-inner shadow-neutral-200 xl:mr-2"
       classNames={{

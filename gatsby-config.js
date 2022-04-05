@@ -11,6 +11,7 @@ module.exports = {
     `gatsby-plugin-mantine`,
     `gatsby-plugin-postcss`,
     `gatsby-transformer-json`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {

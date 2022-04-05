@@ -3,16 +3,18 @@ import React from "react";
 import "../styles/global.css";
 import Footer from "./Footer";
 import Navbar from "./Navbar/Navbar";
+import SEO from "./SEO";
 
 export default function Layout({ children }) {
-  Date.prototype.addDays = function(days) {
+  Date.prototype.addDays = function (days) {
     var date = new Date(this.valueOf());
     date.setDate(date.getDate() + days);
     return date;
-}
+  };
 
   return (
     <>
+      <SEO />
       <MantineProvider
         theme={{
           colors: {
