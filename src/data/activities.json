@@ -2,37 +2,123 @@
   {
     "name": "Stausee Ottenstein",
     "destination": "Peygarten-Ottenstein 69, 3532 Rastenfeld",
-    "description": "Der Stausee Ottenstein bietet nicht nur eine wunderschöne Kulisse zum Baden, sondern ist mit seinen bewaldeten Ufern der perfekte Platz zum Wandern oder Radfahren.",
-    "photo": "../../ottenstein.jpg"
+    "description": "descriptionOttenstein",
+    "photo": "../../activities/ottenstein.jpg"
   },
   {
     "name": "Solefelsenbad Gmünd",
     "destination": "Albrechtser Str. 10-12, 3950 Gmünd",
-    "description": "Die Süß- und Salzwasserbecken und die große Saunalandschaft begeistern die Gäste des Solefelsenbades ganz besonders. Aber auch für die kleinen Gäste gibt es ein Kinderbecken und eine Erlebnisrutsche zum austoben.",
-    "photo": "../../solefelsenbad-gmuend.jpg"
+    "description": "descriptionGmuend",
+    "photo": "../../activities/solefelsenbad.jpg"
   },
   {
     "name": "Biohof Lirnberger",
     "destination": "Merkenbrechts 28, 3800 Merkenbrechts",
-    "description": "Ein tierisches und aufregendes Abenteuer bietet der Biohof Lirnbeger mit seinen Alpaka Wanderungen. Die Alpakas Lennard, José, Fernando und Alfredo freuen sich über euren Besuch.",
-    "photo": "../../ottenstein.jpg"
+    "description": "descriptionLirnberger",
+    "photo": "../../activities/alpaka-Biohof-Lirnberger.jpg"
   },
   {
     "name": "Rosenburg",
     "destination": "Rosenburg 1, 3573 Rosenburg",
-    "description": "Der Kletterwald auf der Rosenburg besteht aus mehreren Parkours. Die Besonderheit des Kletterparks sind die abenteuerlichen Höhen, mit einem atemberaubenden Weitblick über das liebliche Kamptal.",
-    "photo": "../../rosenburg-kletterpark.jpg"
+    "description": "descriptionRosenburg",
+    "photo": "../../activities/rosenburg.jpg"
   },
   {
     "name": "Lohnbachfälle",
     "destination": "Rappottenstein 24 3911 Rappottenstein",
-    "description": "Der Lohnbachfall ist eine ca. 200 m lange Schluchtstrecke des Lohnbaches. Wechselnde Breiten unterstreichen die wildromantische Schönheit der Schlucht und bieten das perfekte Wander Erlebnis.",
-    "photo": "../../lohnbachfall.jpg"
+    "description": "descriptionLohnbachfaelle",
+    "photo": "../../activities/lohnbachfall.jpg"
   },
   {
     "name": "Waldviertel-Radweg",
-    "destination": "Von Krems über Horn, Gmünd und Maria Taferl bis nach Klein Pöchlarn",
-    "description": "Der Waldviertel-Radweg durchzieht das gesamte Waldviertel und führt zu den schönsten Sehenswürdigkeiten der Region.",
+    "destination": "Krems - Rosenburg - Horn - Göpfritz - Litschau - Gmünd - GroßGerungs - MariaTaferl - KleinPöchlarn",
+    "description": "descriptionRadweg",
     "photo": "../../radweg.jpg"
+  },
+  {
+    "name": "Waldviertel - Radweg",
+    "destination": "Krems - Rosenburg - Horn - Göpfritz - Litschau - Gmünd - GroßGerungs - MariaTaferl - KleinPöchlarn",
+    "description": "descriptionRadweg",
+    "photo": "../../activities/radweg.jpg"
+  },
+  {
+    "name": "Waldbad Groß-Sieghharts",
+    "description": "descriptionWaldbad",
+    "photo": "../../activities/waldbad-gross-siegharts.jpg"
+  },
+  {
+    "name": "Freibad Waidhofen",
+    "description": "descriptionWaidhofen",
+    "photo": "../../activities/freibad-waidhofen.jpg"
+  },
+  {
+    "name": "Freibad Horn",
+    "description": "descriptionHorn",
+    "photo": "../../activities/freibad-horn.jpg"
+  },
+  {
+    "name": "Freibad Zwettl",
+    "description": "descriptionZwettl",
+    "photo": "../../activities/freibad-zwettl.png"
+  },
+  {
+    "name": "Stadtsee Allentsteig",
+    "description": "descriptionAllentsteig",
+    "photo": "../../activities/stadtsee-allentsteig.jpg"
+  },
+  {
+    "name": "Thayatal Vitalbad",
+    "description": "descriptionThayatal",
+    "photo": "../../activities/thayatal-vitalbad.jpg"
+  },
+  {
+    "name": "Strandbad Gmünd",
+    "description": "descriptionStrandbadGmuend",
+    "photo": "../../activities/gmuender-strandbad.jpg"
+  },
+  {
+    "name": "Moorbad Schrems",
+    "description": "descriptionMoorbad",
+    "photo": "../../activities/moorbad-schrems.jpg"
+  },
+  {
+    "name": "Privatbrauerei Zwettl",
+    "description": "descriptionPrivatbrauerei",
+    "photo": "../../activities/privatbrauerei-zwettl.jpg"
+  },
+  {
+    "name": "Ruine Dobra",
+    "description": "descriptionDobra",
+    "photo": "../../activities/ruine-dobra.jpg"
+  },
+  {
+    "name": "Schloss Greilenstein",
+    "description": "descriptionGreilenstein",
+    "photo": "../../activities/schloss-greillenstein.jpg"
+  },
+  {
+    "name": "Ruine Kollmitz",
+    "description": "descriptionKollmitz",
+    "photo": "../../activities/burgruine_Kollmitz.jpg"
+  },
+  {
+    "name": "Kittenberger Erlebnisgärten",
+    "description": "descriptionKittenberger",
+    "photo": "../../activities/kittenberger-erlebnisgarten.jpg"
+  },
+  {
+    "name": "Unterwasserreich Schrems",
+    "description": "descriptionUnterwasserreich",
+    "photo": "../../activities/unterwasserreich-schrems.jpg"
+  },
+  {
+    "name": "Naturpark Blockheide",
+    "description": "descriptionNaturpark",
+    "photo": "../../activities/naturpark-blockheide.jpg"
+  },
+  {
+    "name": "Himmelsleiter",
+    "description": "descriptionHimmelsleiter",
+    "photo": "../../activities/himmelsleiter-schrems.jpg"
   }
 ]

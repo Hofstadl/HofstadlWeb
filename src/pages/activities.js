@@ -1,13 +1,24 @@
 import React from "react";
-import { graphql } from "gatsby";
-import { useTranslation } from "gatsby-plugin-react-i18next";
+import Layout from "../components/Layout";
+import {graphql} from "gatsby";
+import Masonry from '@mui/lab/Masonry';
+import Activity from "../components/Activity"
+import activities from "../data/activities.json"
 
 export default function Activities() {
-  const { t } = useTranslation();
 
-  return (
-      <div>{t("activities")}</div>
-  );
+    return (
+        <Layout>
+            <div className="mx-2">
+                <Masonry columns={{ xs: 2, sm: 3 }} spacing={2}>
+                    {activities.map((activity, index) => (
+                        (activity.name !== "Waldviertel-Radweg") &&
+                        <Activity key={index} image={activity.photo} headline={activity.name} text={activity.description} />
+                        ))}
+                </Masonry>
+            </div>
+        </Layout>
+    );
 }
 
 export const query = graphql`
