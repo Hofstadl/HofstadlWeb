@@ -12,10 +12,9 @@ export default function Activity({image, headline, text}) {
                 <div className="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover">
                     <img src={image}
                          className="w-full transition duration-300 ease-linear align-middle"/>
-                        <div className="opacity-30 hover:opacity-100 absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed">
+                        <div className="opacity-100 hover:opacity-100 absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed">
                             <div className="flex justify-center h-full">
                                 <h5 className="text-lg font-bold text-white m-6">{headline}</h5>
-                                <p>{t(text)}</p>
                             </div>
                         </div>
                         <div className="hover-overlay">
