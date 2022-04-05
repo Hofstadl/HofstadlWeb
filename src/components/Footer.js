@@ -17,7 +17,7 @@ const contacts = [
   {
     data: "Merkenbrechts 22, 3800 Göpfritz",
     href: "https://goo.gl/maps/TE9aXP4352q6S7yY8",
-  }
+  },
 ];
 
 const socialMedien = [
@@ -66,6 +66,28 @@ const navs = [
   {
     name: "contact",
     route: "/contact",
+  },
+  {
+    name: "imprint",
+    route: "/imprint",
+  },
+  {
+    name: "privacy",
+    route: "/privacy",
+  },
+];
+
+const navImprint = [
+  {
+    name: "imprint",
+    route: "/imprint",
+  },
+];
+
+const navPrivacy = [
+  {
+    name: "privacy",
+    route: "/privacy",
   },
 ];
 
@@ -155,10 +177,26 @@ export default function Footer() {
           </p>
           <span className="mt-2 inline-flex justify-center space-x-16 sm:ml-auto sm:mt-0 sm:justify-start">
             <a className="text-gray-500 dark:text-white">
-              {t(translations.imprint)}
+              {navImprint.map((nav, index) => (
+                <Link
+                  key={index}
+                  className="block text-gray-600 hover:text-black dark:text-white"
+                  to={nav.route}
+                >
+                  {t(translations.imprint)}
+                </Link>
+              ))}
             </a>
             <a className="text-gray-500 dark:text-white">
-              {t(translations.privacy)}
+              {navPrivacy.map((nav, index) => (
+                <Link
+                  key={index}
+                  className="block text-gray-600 hover:text-black dark:text-white"
+                  to={nav.route}
+                >
+                  {t(translations.privacy)}
+                </Link>
+              ))}
             </a>
           </span>
         </div>
