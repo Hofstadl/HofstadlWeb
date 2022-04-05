@@ -172,7 +172,9 @@ export default function Start({ data, summary }) {
             <ArrowRight className="fill-full h-7 w-10 stroke-green" />
           </Link>
         </div>
-        <ActivitySlider />
+        <div className="py-6">
+          <ActivitySlider />
+        </div>
       </section>
     </>
   );

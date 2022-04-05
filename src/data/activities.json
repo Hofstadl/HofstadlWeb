@@ -31,13 +31,13 @@
   },
   {
     "name": "Waldviertel-Radweg",
-    "destination": "Krems - Rosenburg - Horn - Göpfritz - Litschau - Gmünd - GroßGerungs - MariaTaferl - KleinPöchlarn",
+    "destination": "Von Krems über Horn, Göpfritz, Gmünd und Maria Taferl nach Klein Pöchlarn",
     "description": "descriptionRadweg",
     "photo": "../../radweg.jpg"
   },
   {
     "name": "Waldviertel - Radweg",
-    "destination": "Krems - Rosenburg - Horn - Göpfritz - Litschau - Gmünd - GroßGerungs - MariaTaferl - KleinPöchlarn",
+    "destination": "Krems - Rosenburg - Horn - Göpfritz - Litschau - Gmünd - Groß Gerungs - Maria Taferl - Klein Pöchlarn",
     "description": "descriptionRadweg",
     "photo": "../../activities/radweg.jpg"
   },
