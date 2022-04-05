@@ -29,12 +29,10 @@ export default function Start({ data, summary }) {
               {t("welcome").split("-")[0]} <br />-{t("welcome").split("-")[1]}{" "}
               <span className="text-green">Waldviertel</span>
             </h1>
-            <p className="mb-8 leading-relaxed">{t("welcome1")}</p>
+            <p className="mb-8 leading-relaxed">{t("welcome2")}</p>
             <br />
             <p className="mb-8 hidden leading-relaxed 2xl:block">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Est
-              placerat in egestas erat. Non sodales neque sodales ut etiam sit.
+              {t("welcome3")}
             </p>
             <RequestForm data={data} />
           </div>
@@ -90,9 +88,7 @@ export default function Start({ data, summary }) {
               <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
                 {t("generalTitel")}
               </h1>
-              <p>
-              {t("generalText")}
-              </p>
+              <p>{t("generalText")}</p>
               <div className="mb-5"></div>
 
               <nav className="flex flex-row space-x-3">
@@ -118,11 +114,9 @@ export default function Start({ data, summary }) {
                 {t("rooms-apartments").toUpperCase()}
               </p>
               <h1 className="title-font mb-4 text-3xl font-medium text-black dark:text-white sm:text-4xl">
-              {t("roomsApartmentTitel")}
+                {t("roomsApartmentTitel")}
               </h1>
-              <p>
-              {t("roomsApartmentText")}
-              </p>
+              <p>{t("roomsApartmentText")}</p>
               <div className="mb-5"></div>
               <nav className="flex flex-row space-x-3">
                 <Link
