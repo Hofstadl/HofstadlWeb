@@ -6,12 +6,13 @@ import ApartmentIcon from "../../data/icons/ApartmentIcon";
 import RightArrowSmIcon from "../../data/icons/RightArrowSmIcon";
 import RoomIcon from "../../data/icons/RoomIcon";
 import DatePicker from "./DatePicker";
-import NameField from "./NameField";
+import EmailField from "./EmailField";
 import PersonsSelector from "./PersonsSelector";
 
 export default function RequestForm({ data }) {
   const { t } = useTranslation();
   const [accomodation, setAccomodation] = useState("room");
+  const [email, setEmail] = useState("");
   const [persons, setPersons] = useState(2);
   const [date, setDate] = useState([
     new Date(),
@@ -72,7 +73,7 @@ export default function RequestForm({ data }) {
         />
       </div>
       <div className="flex flex-col justify-between space-y-4 xl:flex-row xl:space-y-0">
-        <NameField />
+        <EmailField email={email} setEmail={setEmail} />
         <div className="flex space-x-2">
           <PersonsSelector
             persons={persons}
@@ -98,6 +99,7 @@ export default function RequestForm({ data }) {
             defaultValue="Buchungsanfrage"
           />
           <input type="text" name="Unterkunft" defaultValue={accomodation} value={accomodation} className="hidden" />
+          <input type="email" name="Email" defaultValue={email} value={email} className="hidden" />
           <input type="number" name="Personen" defaultValue={persons} value={persons} className="hidden" />
           <input
             type="date"
