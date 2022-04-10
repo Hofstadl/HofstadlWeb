@@ -58,28 +58,27 @@ const translations = {
   followUs: "followUs",
 };
 
-const scenes = [
-  {
-    imageSource: b,
-    title: "Innenhof",
-    autoRotate: -1,
-    autoLoad: true,
-    autoRotateInactivityDelay: 600,
-    preview: b,
-    hotSpots: [
-      {
-        pitch: 14.1,
-        yaw: 1.5,
-        type: "scene",
-        text: "Garten",
-        sceneId: "0",
-      },
-    ],
-  },
-];
-
 export default function Contact() {
   const { t } = useTranslation();
+  const scenes = [
+    {
+      imageSource: b,
+      title: t("courtyard"),
+      autoRotate: -1,
+      autoLoad: true,
+      autoRotateInactivityDelay: 600,
+      preview: b,
+      hotSpots: [
+        {
+          pitch: 14.1,
+          yaw: 1.5,
+          type: "scene",
+          text: t("garden"),
+          sceneId: "0",
+        },
+      ],
+    },
+  ];
 
   const loadHotspots = () => {
     scenes.map((scene, index) =>
@@ -96,7 +95,7 @@ export default function Contact() {
             sceneId={"0"}
             imageSource={a}
             config={{
-              title: "Garten",
+              title: t("garden"),
               autoRotate: -1,
               autoLoad: true,
               autoRotateInactivityDelay: 600,
@@ -107,7 +106,7 @@ export default function Contact() {
                   pitch: 20,
                   yaw: 5,
                   type: "scene",
-                  text: "Innenhof",
+                  text: t("courtyard"),
                   sceneId: "1",
                 },
               ],
