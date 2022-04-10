@@ -1,17 +1,16 @@
-import React, { useState } from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
+import React, { useState } from "react";
 import NextIcon from "../data/icons/NextIcon";
 import PrevisiousIcon from "../data/icons/PrevisiousIcon";
+import badezimmer from "../data/images/start/badezimmer.jpg";
 import ferienwohnung_Kueche1 from "../data/images/start/ferienwohnung_Kueche1.jpg";
 import ferienwohnung_Kueche2 from "../data/images/start/ferienwohnung_Kueche2.jpg";
 import ferienwohnung_Zimmer1 from "../data/images/start/ferienwohnung_Zimmer1.jpg";
 import ferienwohnung_Zimmer2 from "../data/images/start/ferienwohnung_Zimmer2.jpg";
-import badezimmer from "../data/images/start/badezimmer.jpg";
 import zimmer1 from "../data/images/start/zimmer1.jpg";
 import zimmer2 from "../data/images/start/zimmer2.jpg";
 import zimmer3 from "../data/images/start/zimmer3.jpg";
-import Layout from "../components/Layout";
 
 const translations = {
   room: "room",
@@ -48,7 +47,7 @@ export default function RoomsApartments() {
 
   return (
     <>
-      <section className="body-font flex justify-center bg-white dark:bg-neutral-900 dark:text-gray-400 ">
+      <section className="body-font mt-4 flex justify-center bg-white dark:bg-neutral-900 dark:text-gray-400 ">
         <div>
           <div className="mx-auto h-10 w-2/3 rounded-t-lg bg-blue bg-opacity-30 md:mx-0 md:w-1/3"></div>
           <div className="mx-auto flex max-w-[1800px] flex-col items-center px-4 md:mx-0 md:flex-row md:px-0">

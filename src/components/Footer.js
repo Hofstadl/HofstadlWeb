@@ -2,7 +2,7 @@ import { Link, useTranslation } from "gatsby-plugin-react-i18next";
 import React from "react";
 import FacebookIcon from "../data/icons/FacebookIcon";
 import InstagramIcon from "../data/icons/InstagramIcon";
-import TwitterIcon from "../data/icons/TwitterIcon";
+import GithubIcon from "../data/icons/GithubIcon";
 import logo from "../data/images/logo.png";
 
 const contacts = [
@@ -31,15 +31,6 @@ const socialMedien = [
     href: "https://m.facebook.com/BiobauernhofLiebhart/?locale2=de_DE",
   },
   {
-    name: "Twitter",
-    icon: (
-      <TwitterIcon
-        className={"fill-full h-6 w-6 stroke-black dark:fill-white"}
-      />
-    ),
-    href: "https://www.instagram.com/hofstadl_liebhart/",
-  },
-  {
     name: "Instagram",
     icon: (
       <InstagramIcon
@@ -47,6 +38,15 @@ const socialMedien = [
       />
     ),
     href: "https://www.instagram.com/hofstadl_liebhart/",
+  },
+  {
+    name: "Github",
+    icon: (
+      <GithubIcon
+        className={"fill-full h-6 w-6 stroke-black dark:fill-white"}
+      />
+    ),
+    href: "https://github.com/Hofstadl/HofstadlWeb",
   },
 ];
 
@@ -176,7 +176,7 @@ export default function Footer() {
             Copyright © {new Date().getFullYear()} Hofstadl
           </p>
           <span className="mt-2 inline-flex justify-center space-x-16 sm:ml-auto sm:mt-0 sm:justify-start">
-            <a className="text-gray-500 dark:text-white">
+            <div className="text-gray-500 dark:text-white">
               {navImprint.map((nav, index) => (
                 <Link
                   key={index}
@@ -186,8 +186,8 @@ export default function Footer() {
                   {t(translations.imprint)}
                 </Link>
               ))}
-            </a>
-            <a className="text-gray-500 dark:text-white">
+            </div>
+            <div className="text-gray-500 dark:text-white">
               {navPrivacy.map((nav, index) => (
                 <Link
                   key={index}
@@ -197,7 +197,7 @@ export default function Footer() {
                   {t(translations.privacy)}
                 </Link>
               ))}
-            </a>
+            </div>
           </span>
         </div>
       </div>

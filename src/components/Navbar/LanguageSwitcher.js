@@ -1,18 +1,16 @@
-import { Dialog } from "@headlessui/react";
+import { Modal, Radio, RadioGroup } from "@mantine/core";
 import {
   I18nextContext,
-  Link,
   useI18next,
   useTranslation,
 } from "gatsby-plugin-react-i18next";
 import React, { useContext, useState } from "react";
-import { Button } from "@mantine/core";
 
 export default function LanguageSwitcher() {
   const context = useContext(I18nextContext);
-  const { languages, originalPath } = useI18next();
+  const { changeLanguage } = useI18next();
   const { t } = useTranslation();
-  let [menuOpen, setMenuOpen] = useState(false);
+  let [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
@@ -20,47 +18,34 @@ export default function LanguageSwitcher() {
         className={
           "rounded-xl py-3 px-8 text-green shadow-inner shadow-neutral-200"
         }
-        onClick={() => setMenuOpen(true)}
+        onClick={() => setIsOpen(true)}
       >
         {context.language.toUpperCase()}
       </button>
-      <Dialog
-        as="div"
-        open={menuOpen}
-        className="fixed inset-0 z-50 w-full overflow-y-auto px-8"
-        onClose={() => setMenuOpen(false)}
+      <Modal
+        title={t("languageSwitcherTitle")}
+        opened={isOpen}
+        onClose={() => setIsOpen(false)}
+        centered
+        overlayOpacity={0.4}
+        radius="lg"
+        className="hidden md:block"
+        classNames={{ header: "mb-1" }}
       >
-        <div className="flex min-h-screen items-center justify-center">
-          <Dialog.Overlay className="fixed inset-0 bg-black opacity-20" />
-
-          <div
-            className={
-              "my-8 inline-block w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all dark:bg-neutral-800"
-            }
-          >
-            <Dialog.Title
-              as={"h3"}
-              className="text-lg font-medium leading-6 text-gray-900 dark:text-white"
-            >
-              {t("languageSwitcherTitle")}
-            </Dialog.Title>
-            <div className="mt-6">
-              <p className="flex justify-start space-x-6 text-sm text-gray-500">
-                {languages.map((language) => (
-                  <Link
-                    key={language}
-                    to={originalPath}
-                    language={language}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {language.toUpperCase()}
-                  </Link>
-                ))}
-              </p>
-            </div>
-          </div>
-        </div>
-      </Dialog>
+        <RadioGroup
+          description={t("languageSwitcherDescription")}
+          color="gray"
+          value={context.language}
+          onChange={(language) => changeLanguage(language)}
+          className="mb-20 md:mb-0"
+          classNames={{ description: "mb-4", radio: "fill-green" }}
+          size="md"
+        >
+          <Radio value="de" label="Deutsch" />
+          <Radio value="en" label="English" />
+          <Radio value="cz" label="čeština" />
+        </RadioGroup>
+      </Modal>
     </div>
   );
 }

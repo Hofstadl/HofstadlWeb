@@ -1,15 +1,18 @@
-import { Dialog, Transition } from "@headlessui/react";
+import { Burger, Drawer } from "@mantine/core";
 import { navigate } from "gatsby";
-import { Link, useTranslation } from "gatsby-plugin-react-i18next";
-import React, { Fragment, useRef, useState } from "react";
+import {
+  I18nextContext,
+  Link,
+  useTranslation,
+} from "gatsby-plugin-react-i18next";
+import React, { useContext, useRef, useState } from "react";
 import ActivitiesIcon from "../../data/icons/ActivitiesIcon";
-import CloseIcon from "../../data/icons/CloseIcon";
 import ContactIcon from "../../data/icons/ContactIcon";
 import HomeIcon from "../../data/icons/HomeIcon";
-import MenuIcon from "../../data/icons/MenuIcon";
-import TwitterIcon from "../../data/icons/TwitterIcon";
+import RoomApartmentIcon from "../../data/icons/RoomsApartmentsIcon";
 import logo from "../../data/images/logo.png";
 import LanguageSwitcher from "./LanguageSwitcher";
+import MobileLanguageSwitcher from "./MobileLanguageSwitcher";
 
 const navs = [
   {
@@ -17,26 +20,30 @@ const navs = [
     route: "/",
     icon: (
       <HomeIcon
-        className={"h-8 w-8 fill-transparent stroke-black dark:stroke-white"}
+        className={
+          "h-8 w-8 fill-transparent stroke-black stroke-2 dark:stroke-white"
+        }
       />
     ),
   },
   {
     name: "rooms-apartments",
     route: "/rooms-apartments/",
-    icon: <TwitterIcon className={"h-8 w-8 fill-black dark:fill-white"} />,
+    icon: <RoomApartmentIcon className={"h-8 w-8 "} />,
   },
   {
     name: "activities",
     route: "/activities/",
-    icon: <ActivitiesIcon className={"h-8 w-8 fill-black dark:fill-white"} />,
+    icon: <ActivitiesIcon className={"h-8 w-8  dark:fill-white"} />,
   },
   {
     name: "contact",
     route: "/contact/",
     icon: (
       <ContactIcon
-        className={"h-8 w-8 fill-transparent stroke-black dark:fill-white"}
+        className={
+          "h-8 w-8 fill-transparent stroke-black stroke-2 dark:fill-white"
+        }
       />
     ),
   },
@@ -44,8 +51,8 @@ const navs = [
 
 export default function Navbar() {
   let [menuOpen, setMenuOpen] = useState(false);
-  let initialRef = useRef(null);
   const { t } = useTranslation();
+  const context = useContext(I18nextContext);
 
   return (
     <nav className="fixed z-50 w-full bg-white dark:bg-neutral-900 dark:text-white">
@@ -63,7 +70,13 @@ export default function Navbar() {
             alt={"logo"}
           />
           {navs.map((nav) => (
-            <Link to={nav.route} key={nav.route} className="hover:text-green">
+            <Link
+              to={nav.route}
+              key={nav.route}
+              className={`${
+                nav.route === context.originalPath ? "text-green" : null
+              } hover:text-gray-700`}
+            >
               {t(nav.name)}
             </Link>
           ))}
@@ -80,80 +93,47 @@ export default function Navbar() {
             alt={"logo"}
           />
 
-          <button onClick={() => setMenuOpen(true)}>
-            <MenuIcon className={"h-8 w-8 dark:fill-white"} />
-          </button>
+          <Burger opened={menuOpen} onClick={() => setMenuOpen((o) => !o)} />
         </div>
         {/* Mobile navigation menu starts here */}
-        <Transition
-          show={menuOpen}
-          as={Fragment}
-          enter={`ease-in-out duration-300`}
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in-out duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
+        <Drawer
+          opened={menuOpen}
+          onClose={() => setMenuOpen(false)}
+          padding="xl"
+          position="top"
+          withCloseButton={false}
+          size="100%"
+          classNames={{ drawer: "top-20 md:top-24" }}
+          withOverlay={false}
+          zIndex="40"
+          className="md:hidden"
         >
-          <Dialog
-            as="div"
-            initialFocus={initialRef}
-            ref={initialRef}
-            onClose={() => setMenuOpen(false)}
-            className="fixed inset-0 z-40 h-full w-full overflow-auto bg-white dark:bg-neutral-900 dark:text-white md:hidden"
+          <div
+            data-autofocus
+            className={
+              "mx-auto flex h-full flex-col justify-between overflow-scroll border-t-2 py-6 px-8"
+            }
           >
-            <div className={"mx-auto px-8 md:max-w-7xl"}>
-              <div className={"flex h-20 items-center justify-between"}>
-                <img
-                  src={logo}
-                  onClick={() => navigate("/")}
-                  className={"mr-10 mt-2 h-16 w-auto"}
-                  alt={"logo"}
-                />
-
-                <LanguageSwitcher />
-              </div>
-            </div>
-            <div className="-mb-4 block border-b-2 pt-4" />
-
-            <div className={"mx-auto space-y-40 py-8 px-8 sm:space-y-60"}>
-              <div>
-                {navs.map((nav, index) => (
-                  <Transition.Child
-                    key={index}
-                    as={Fragment}
-                    enter={`ease-in-out duration-300`}
-                    enterFrom="opacity-0"
-                    enterTo="opacity-100"
-                    leave="ease-in-out duration-200"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
-                  >
-                    <Link
-                      className={"block space-x-2 py-4"}
-                      to={nav.route}
-                      key={nav.route}
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      <div className="flex items-center justify-start">
-                        <div className="pr-2">{nav.icon}</div>
-                        {t(nav.name)}
-                      </div>
-                    </Link>
-                  </Transition.Child>
-                ))}
-              </div>
-              <div className="flex justify-center ">
-                <button
+            <div>
+              {navs.map((nav, index) => (
+                <Link
+                  className={`${
+                    nav.route === context.originalPath ? "text-green" : null
+                  } block py-4 hover:text-gray-700`}
+                  to={nav.route}
+                  key={nav.route}
                   onClick={() => setMenuOpen(false)}
-                  className="flex h-14 w-14 items-center justify-center rounded-full shadow-inner"
                 >
-                  <CloseIcon className={"h-8 w-8 stroke-green"} />
-                </button>
-              </div>
+                  <div className="flex items-center justify-start">
+                    <div className="pr-3">{nav.icon}</div>
+                    {t(nav.name)}
+                  </div>
+                </Link>
+              ))}
             </div>
-          </Dialog>
-        </Transition>
+            <MobileLanguageSwitcher />
+          </div>
+        </Drawer>
       </div>
     </nav>
   );

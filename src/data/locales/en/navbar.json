@@ -3,5 +3,6 @@
   "rooms-apartments": "Rooms & Apartments",
   "contact": "Contact",
   "activities": "Activities",
-  "languageSwitcherTitle": "Choose another language"
+  "languageSwitcherTitle": "Language settings",
+  "languageSwitcherDescription": "Please select your preferred language"
 }

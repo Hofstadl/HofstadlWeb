@@ -1,10 +1,10 @@
-import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import FacebookIcon from "../data/icons/FacebookIcon";
-import TwitterIcon from "../data/icons/TwitterIcon";
-import InstagramIcon from "../data/icons/InstagramIcon";
+import React from "react";
 import ReactPannellum from "react-pannellum";
+import FacebookIcon from "../data/icons/FacebookIcon";
+import InstagramIcon from "../data/icons/InstagramIcon";
+import TwitterIcon from "../data/icons/GithubIcon";
 import a from "../data/images/contact/a.jpg";
 import b from "../data/images/contact/b.jpg";
 
@@ -90,7 +90,7 @@ export default function Contact() {
   return (
     <>
       <section>
-        <div className="flex justify-center mt-10">
+        <div className="mt-10 flex justify-center">
           <ReactPannellum
             id={"360Tour"}
             sceneId={"0"}
@@ -118,9 +118,9 @@ export default function Contact() {
         </div>
       </section>
 
-      <section class="body-font relative text-gray-600">
-        <div class="container flex w-full flex-wrap justify-center px-5 py-24 sm:flex-nowrap">
-          <div class="relative flex items-end justify-start overflow-hidden rounded-lg bg-gray-300 sm:mr-10 md:w-1/2 lg:w-2/3">
+      <section className="body-font relative text-gray-600">
+        <div className="container flex w-full flex-wrap justify-center px-5 py-24 sm:flex-nowrap">
+          <div className="relative flex items-end justify-start overflow-hidden rounded-lg bg-gray-300 sm:mr-10 md:w-1/2 lg:w-2/3">
             <iframe
               width="800"
               height="500"
@@ -134,12 +134,12 @@ export default function Contact() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2632.9061267617135!2d15.398633215875835!3d48.707275179272976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4772c0e2c020a7c9%3A0xfd9009b92c854be2!2sLiebhart%20Sonja!5e0!3m2!1sde!2sat!4v1648485753466!5m2!1sde!2sat"
             ></iframe>
           </div>
-          <div class="mt-8 flex w-full flex-col items-center justify-center bg-white md:ml-auto md:mt-0 md:w-1/2 md:items-start md:py-8 lg:w-1/3">
+          <div className="mt-8 flex w-full flex-col items-center justify-center bg-white md:ml-auto md:mt-0 md:w-1/2 md:items-start md:py-8 lg:w-1/3">
             <div className="flex w-full flex-col items-center text-center">
-              <h2 class="title-font mb-1 text-lg font-medium text-gray-900">
+              <h2 className="title-font mb-1 text-lg font-medium text-gray-900">
                 {t(translations.contact)}
               </h2>
-              <p class="mb-2 leading-relaxed text-gray-600">Sonja Liebhart</p>
+              <p className="mb-2 leading-relaxed text-gray-600">Sonja Liebhart</p>
               {contacts.map((value, index) => (
                 <a
                   key={index}
@@ -152,7 +152,7 @@ export default function Contact() {
                 </a>
               ))}
               <div className="mb-10"></div>
-              <h2 class="title-font mb-1 text-lg font-medium text-gray-900">
+              <h2 className="title-font mb-1 text-lg font-medium text-gray-900">
                 {t(translations.followUs)}
               </h2>
               {socialMedien.map((value, index) => (

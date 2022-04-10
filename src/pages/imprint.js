@@ -1,6 +1,6 @@
-import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
+import React from "react";
 
 export default function Imprint() {
   const { t } = useTranslation();
@@ -11,7 +11,7 @@ export default function Imprint() {
         Impressum
       </h1>
       <br />
-      <h6 class="text-blue-600 mt-0 mb-2 text-base font-bold leading-tight">
+      <h6 className="text-blue-600 mt-0 mb-2 text-base font-bold leading-tight">
         Angaben gemäß § 5 TMG:
       </h6>
       <p>

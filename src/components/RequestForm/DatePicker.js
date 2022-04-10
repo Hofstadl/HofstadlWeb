@@ -5,7 +5,7 @@ import "dayjs/locale/cs";
 import "dayjs/locale/de";
 import "dayjs/locale/en";
 import { I18nextContext, useTranslation } from "gatsby-plugin-react-i18next";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import CalendarIcon from "../../data/icons/CalendarIcon";
@@ -150,7 +150,8 @@ export default function DatePicker({
           input: "text-center leading-none h-fit text-md",
           label:
             "flex justify-center mb-0 text-center font-sans text-xs text-gray-400",
-          root: "p-3",
+          root: "p-3 items-center",
+          wrapper: "items-center"
         }}
       />
     </>

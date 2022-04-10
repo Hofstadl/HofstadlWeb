@@ -1,9 +1,7 @@
-import React from "react";
-import Layout from "../components/Layout";
-import ErrorPage from "../components/ErrorPage";
-
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
+import React from "react";
+import ErrorPage from "../components/ErrorPage";
 
 export default function NotFound() {
   const { t } = useTranslation();

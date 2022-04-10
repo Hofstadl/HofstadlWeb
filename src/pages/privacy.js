@@ -1,6 +1,6 @@
-import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
+import React from "react";
 
 export default function Privacy() {
   const { t } = useTranslation();
@@ -33,7 +33,7 @@ export default function Privacy() {
         Datenschutzgesetzes (DSG) grundsätzlich die folgende Rechte zu:
       </p>
       <div className="mb-4"></div>
-      <ul class="ml-10 list-outside list-disc">
+      <ul className="ml-10 list-outside list-disc">
         <li>Recht auf Berichtigung (Artikel 16 DSGVO)</li>
         <li>
           Recht auf Löschung („Recht auf Vergessenwerden“) (Artikel 17 DSGVO)
@@ -331,7 +331,7 @@ export default function Privacy() {
         handeln:
       </p>
       <div className="mb-4"></div>
-      <ul class="ml-10 list-outside list-disc">
+      <ul className="ml-10 list-outside list-disc">
         <li>
           Zielgruppenberichte: Über Zielgruppenberichte lernen wir unsere User
           besser kennen und wissen genauer, wer sich für unser Service
@@ -448,7 +448,7 @@ export default function Privacy() {
         Verfügung:
       </p>
       <div className="mb-4"></div>
-      <ul class="ml-10 list-outside list-disc">
+      <ul className="ml-10 list-outside list-disc">
         <li>Löschung nach 14 Monaten</li>
         <li>Löschung nach 26 Monaten</li>
         <li>Löschung nach 38 Monaten</li>

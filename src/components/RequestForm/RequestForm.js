@@ -12,7 +12,7 @@ import PersonsSelector from "./PersonsSelector";
 export default function RequestForm({ data }) {
   const { t } = useTranslation();
   const [accomodation, setAccomodation] = useState("room");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("Keine Email angegeben");
   const [persons, setPersons] = useState(2);
   const [date, setDate] = useState([
     new Date(),
@@ -98,22 +98,40 @@ export default function RequestForm({ data }) {
             name="form-name"
             defaultValue="Buchungsanfrage"
           />
-          <input type="text" name="Unterkunft" defaultValue={accomodation} value={accomodation} className="hidden" />
-          <input type="email" name="Email" defaultValue={email} value={email} className="hidden" />
-          <input type="number" name="Personen" defaultValue={persons} value={persons} className="hidden" />
+          <input
+            type="text"
+            name="Unterkunft"
+            value={accomodation}
+            className="hidden"
+            onChange={() => {}}
+          />
+          <input
+            type="email"
+            name="Email"
+            value={email}
+            className="hidden"
+            onChange={() => {}}
+          />
+          <input
+            type="number"
+            name="Personen"
+            value={persons}
+            className="hidden"
+            onChange={() => {}}
+          />
           <input
             type="date"
             value={date[0]?.toISOString().slice(0, 10)}
             name="Anreisedatum"
-            defaultValue={date[0]?.toISOString().slice(0, 10)}
             className="hidden"
+            onChange={() => {}}
           />
           <input
             type="date"
             value={date[1]?.toISOString().slice(0, 10)}
             name="Abreisedatum"
-            defaultValue={date[1]?.toISOString().slice(0, 10)}
             className="hidden"
+            onChange={() => {}}
           />
           <button
             type="submit"
