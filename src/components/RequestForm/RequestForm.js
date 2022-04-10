@@ -12,7 +12,7 @@ import PersonsSelector from "./PersonsSelector";
 export default function RequestForm({ data }) {
   const { t } = useTranslation();
   const [accomodation, setAccomodation] = useState("room");
-  const [email, setEmail] = useState("Keine Email angegeben");
+  const [email, setEmail] = useState("");
   const [persons, setPersons] = useState(2);
   const [date, setDate] = useState([
     new Date(),
