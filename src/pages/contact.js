@@ -4,7 +4,7 @@ import React from "react";
 import ReactPannellum from "react-pannellum";
 import FacebookIcon from "../data/icons/FacebookIcon";
 import InstagramIcon from "../data/icons/InstagramIcon";
-import TwitterIcon from "../data/icons/GithubIcon";
+import GithubIcon from "../data/icons/GithubIcon";
 import a from "../data/images/contact/a.jpg";
 import b from "../data/images/contact/b.jpg";
 
@@ -34,15 +34,6 @@ const socialMedien = [
     href: "https://m.facebook.com/BiobauernhofLiebhart/?locale2=de_DE",
   },
   {
-    name: "Twitter",
-    icon: (
-      <TwitterIcon
-        className={"h-6 w-6 fill-black stroke-black dark:fill-white"}
-      />
-    ),
-    href: "https://www.instagram.com/hofstadl_liebhart/",
-  },
-  {
     name: "Instagram",
     icon: (
       <InstagramIcon
@@ -50,6 +41,15 @@ const socialMedien = [
       />
     ),
     href: "https://www.instagram.com/hofstadl_liebhart/",
+  },
+  {
+    name: "Github",
+    icon: (
+      <GithubIcon
+        className={"h-6 w-6 fill-black stroke-black dark:fill-white"}
+      />
+    ),
+    href: "https://github.com/Hofstadl/HofstadlWeb",
   },
 ];
 
@@ -139,7 +139,9 @@ export default function Contact() {
               <h2 className="title-font mb-1 text-lg font-medium text-gray-900">
                 {t(translations.contact)}
               </h2>
-              <p className="mb-2 leading-relaxed text-gray-600">Sonja Liebhart</p>
+              <p className="mb-2 leading-relaxed text-gray-600">
+                Sonja Liebhart
+              </p>
               {contacts.map((value, index) => (
                 <a
                   key={index}
