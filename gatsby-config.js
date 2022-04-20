@@ -13,6 +13,31 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Hofstadl`,
+        short_name: `Hofstadl`,
+        description: `Your holiday in the Waldviertel`,
+        lang: `en`,
+        display: `standalone`,
+        icon: `src/data/images/favicon.svg`,
+        start_url: `/`,
+        theme_color_in_head: false,
+        localize: [
+          {
+            start_url: `/de/`,
+            lang: `de`,
+            description: `Ihr Urlaub im Waldviertel`,
+          },
+          {
+            start_url: `/cz/`,
+            lang: `cz`,
+            description: `Vaše dovolená ve Waldviertel`,
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve(`./src/components/Layout`),
@@ -49,11 +74,11 @@ module.exports = {
       resolve: `gatsby-source-google-calendar`,
       options: {
         calendarIds: [
-          '9gdggpsks7niic72l1ppo76fcg@group.calendar.google.com',
-          'm5q8o1slr45l6s03kdoenha7h8@group.calendar.google.com',
+          "9gdggpsks7niic72l1ppo76fcg@group.calendar.google.com",
+          "m5q8o1slr45l6s03kdoenha7h8@group.calendar.google.com",
         ],
         maxResults: 2500,
-      }
+      },
     },
   ],
 };
