@@ -18,7 +18,7 @@ Visit our website and find out about the possibilities to enjoy our country air 
 
 ## Book your visit here
 
-- [Hofstadl](https://www.hofstadl.tk)
+- [Hofstadl](https://www.hofstadl.tk) ([Alternative Domain](https://hofstadl.netlify.app))
 - [Booking.com](http://www.booking.com/Share-CzKh43)
 - [Urlaub am Bauernhof](https://www.urlaubambauernhof.at/de/hoefe/liebhart)
 - [A-Hotel](https://www.a-hotel.com/de/osterreich/238364-merkenbrechts/6847654-1-hofstadl-sonja-liebhart/)
